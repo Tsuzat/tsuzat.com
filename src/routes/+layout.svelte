@@ -32,10 +32,8 @@
 
 <ModeWatcher />
 
-<div class="app">
-	<Navbar />
-	<div class="app w-[60%] mx-auto">
-		<slot />
-		<Footer />
-	</div>
+<Navbar />
+<div class="app w-[60%] mx-auto">
+	<slot />
+	<Footer />
 </div>
