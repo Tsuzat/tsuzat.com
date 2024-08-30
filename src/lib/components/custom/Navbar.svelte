@@ -9,14 +9,12 @@
 
 <nav>
 	<div class="flex justify-between items-center px-8 py-4">
-		<div>
-			<a href="/" class="text-xl flex items-center text-white">
-				<LottieIcon animationData={animatedData} class="size-10" />
-				<span class="ml-4 text-xl font-bold sm:block hidden">T S U Z A T</span>
-			</a>
-		</div>
+		<a href="/" class="text-xl flex items-center">
+			<LottieIcon animationData={animatedData} class="size-10" />
+			<span class="ml-4 text-xl font-bold sm:block hidden">T S U Z A T</span>
+		</a>
 		<div class="hidden items-center gap-16 sm:flex">
-			{#each ['about', 'blogs', 'projects'] as a}
+			{#each ['about', 'blogs', 'contact'] as a}
 				<a
 					aria-current={$page.url.pathname === `/${a}` ? 'page' : undefined}
 					class="link text-muted-foreground capitalize aria-[current=page]:text-foreground aria-[current=page]:bg-muted px-2 py-1 rounded-md hover:text-foreground hover:animate-pulse"
@@ -32,17 +30,19 @@
 				<Button builders={[builder]} variant="ghost" class="sm:hidden">+ Menu</Button>
 			</DropdownMenu.Trigger>
 			<DropdownMenu.Content>
-				<DropdownMenu.Item>About</DropdownMenu.Item>
-				<DropdownMenu.Item>Contact</DropdownMenu.Item>
-				<DropdownMenu.Item>Blog</DropdownMenu.Item>
-				<DropdownMenu.Item><ThemeChanger /></DropdownMenu.Item>
+				{#each ['about', 'blogs', 'contact'] as a}
+					<DropdownMenu.Item
+						aria-current={$page.url.pathname === `/${a}` ? 'page' : undefined}
+						class="aria-[current=page]:text-foreground aria-[current=page]:bg-accent my-1 text-muted-foreground capitalize"
+						href="/{a}"
+					>
+						{a}
+					</DropdownMenu.Item>
+				{/each}
+				<DropdownMenu.Item class="data-[highlighted]:bg-transparent"
+					><ThemeChanger /></DropdownMenu.Item
+				>
 			</DropdownMenu.Content>
 		</DropdownMenu.Root>
 	</div>
 </nav>
-
-<style>
-	.link {
-		view-transition-name: indicator;
-	}
-</style>
