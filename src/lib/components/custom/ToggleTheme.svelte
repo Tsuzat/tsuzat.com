@@ -9,7 +9,7 @@
 
 <DropdownMenu.Root>
 	<DropdownMenu.Trigger asChild let:builder>
-		<Button builders={[builder]} {variant} {size} class="p-0 m-0 h-4 sm:h-9">
+		<Button builders={[builder]} {variant} {size} class="p-0 m-0 h-4 sm:h-9 text-muted-foreground">
 			<Icons.sun class="size-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
 			<Icons.moon
 				class="absolute size-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
