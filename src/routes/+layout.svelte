@@ -5,6 +5,7 @@
 	import Navbar from '$lib/components/custom/Navbar.svelte';
 	import Footer from '$lib/components/custom/Footer.svelte';
 	import { onNavigate } from '$app/navigation';
+	import { Toaster } from '$lib/components/ui/sonner';
 
 	onNavigate(() => {
 		//@ts-ignore
@@ -31,6 +32,8 @@
 </svelte:head>
 
 <ModeWatcher />
+
+<Toaster richColors />
 
 <div class="app max-w-[47.5rem] px-4 m-auto">
 	<Navbar />

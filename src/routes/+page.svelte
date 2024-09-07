@@ -2,6 +2,14 @@
 	import * as Avatar from '$lib/components/ui/avatar';
 	import profile from '$lib/assets/images/profile.jpg';
 	import { Icons } from '$lib/components/custom/icons/icons';
+	import { toast } from 'svelte-sonner';
+	import { onMount } from 'svelte';
+
+	onMount(() => {
+		toast.warning('This Website is work in progess. Most of components are yet to build', {
+			duration: 10000
+		});
+	});
 </script>
 
 <svelte:head>
