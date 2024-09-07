@@ -8,7 +8,7 @@
 </script>
 
 <nav>
-	<div class="flex justify-between items-center py-4">
+	<div class="flex justify-between items-center py-8">
 		<a href="/" class="text-xl flex items-center">
 			<LottieIcon animationData={animatedData} class="size-10" />
 			<span class="ml-4 text-xl text-muted-foreground font-bold sm:block hidden">TSUZAT</span>
