@@ -1,1 +1,4 @@
-<h1 class="text-center text-3xl">This is an About Page</h1>
+<div class="about">
+	<div class="text-3xl font-semibold">Hey, I'm Alok "Tsuzat" Singh 👋</div>
+	<div></div>
+</div>
