@@ -54,3 +54,32 @@ export const flyAndScale = (
 		easing: cubicOut
 	};
 };
+
+// utils for markdown posts
+import type { ComponentType } from 'svelte';
+
+export type MarkdownPost = {
+	metadata: {
+		title: string;
+		imgUrl: string;
+		publishedAt: string;
+		summary: string;
+		production: boolean;
+		readTime: number;
+	};
+	default: ComponentType;
+};
+
+export type MarkdownPostMetadataAndSlug = {
+	slug: string;
+	metadata: MarkdownPost['metadata'];
+};
+
+export type post = {
+	date: Date;
+	img: string;
+	title: string;
+	blogUrl: string;
+	readTime: number;
+	summary: string;
+};
