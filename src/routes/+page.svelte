@@ -2,13 +2,19 @@
 	import * as Avatar from '$lib/components/ui/avatar';
 	import profile from '$lib/assets/images/profile.jpg';
 	import { Icons } from '$lib/components/custom/icons/icons';
-	import { toast } from 'svelte-sonner';
 	import { onMount } from 'svelte';
+	import * as HoverCard from '$lib/components/ui/hover-card';
+	import type { PageData } from './$types';
+	import PostOverView from '$lib/components/custom/PostOverView.svelte';
+
+	export let data: PageData;
+
+	const posts = data.posts;
 
 	onMount(() => {
-		toast.warning('This Website is work in progess. Most of components are yet to build', {
-			duration: 10000
-		});
+		// toast.warning('This Website is work in progess. Most of components are yet to build', {
+		// 	duration: 10000
+		// });
 	});
 </script>
 
@@ -28,14 +34,29 @@
 				<br />
 				<span class="text-2xl text-muted-foreground">
 					I'm a Software Engineer at
-					<a
-						class="accenture items-center transition-all text-[#a100ff] hover:drop-shadow-[0_0_1rem_#a100ff] duration-500"
-						href="https://www.accenture.com/"
-						target="_blank"
-						rel="noreferrer"
-					>
-						Accenture
-					</a>
+					<HoverCard.Root>
+						<HoverCard.Trigger
+							href="https://www.accenture.com/"
+							target="_blank"
+							rel="noreferrer noopener"
+							class="transition-all text-[#a100ff] underline hover:drop-shadow-[0_0_1rem_#a100ff] duration-500"
+						>
+							Accenture
+						</HoverCard.Trigger>
+						<HoverCard.Content class="w-50">
+							<div class="flex justify-between space-x-4">
+								<Icons.accenture class="size-8 text-[#a100ff] " />
+								<div class="space-y-1">
+									<h4 class="text-sm font-semibold">Accenture</h4>
+									<p class="text-sm">Let there be change</p>
+									<div class="flex items-center pt-2">
+										<Icons.calendar class="mr-2 h-4 w-4 opacity-70" />
+										<span class="text-muted-foreground text-xs"> Joined August 2023 </span>
+									</div>
+								</div>
+							</div>
+						</HoverCard.Content>
+					</HoverCard.Root>
 				</span>
 			</h1>
 			<div
@@ -76,10 +97,13 @@
 			</div>
 		</div>
 	</div>
-</div>
 
-<style>
-	/* .accenture:hover {
-		filter: drop-shadow(0 0 1rem #c96cff);
-	} */
-</style>
+	<div id="posts" class="mt-16">
+		<div class="text-2xl font-bold mb-8">RECENT POSTS</div>
+		<div class="flex flex-col gap-4">
+			{#each posts as post}
+				<PostOverView {post} />
+			{/each}
+		</div>
+	</div>
+</div>
