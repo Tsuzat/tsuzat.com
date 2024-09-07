@@ -1,7 +1,7 @@
 ---
 title: 'Make your powershell and terminal beautiful'
 publishedAt: '2024-04-06'
-imgUrl: '/posts-posters/how-to-setup-powershell.webp'
+imgUrl: '/posts/how-to-setup-powershell/poster.png'
 summary: 'This comprehensive guide provides step-by-step instructions to set up an aesthetically pleasing and efficient development environment on Windows. Learn about essential installations and tips to customize your PowerShell and terminal for enhanced productivity.'
 readTime: 10
 production: true

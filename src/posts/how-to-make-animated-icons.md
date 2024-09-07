@@ -1,7 +1,7 @@
 ---
 title: 'Render Lottie animated icons in web'
 publishedAt: '2024-04-10'
-imgUrl: '/posts-posters/how-to-make-animated-icons.gif'
+imgUrl: '/posts/how-to-make-animated-icons/poster.gif'
 summary: 'This blog post explores how to incorporate captivating Lottie animations into your web projects. Learn techniques using both basic HTML, CSS, and JavaScript, and streamlined integration with a reusable Svelte component.'
 readTime: 5
 production: true

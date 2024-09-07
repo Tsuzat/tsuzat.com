@@ -1,7 +1,7 @@
 ---
 title: 'How I set up windows for Development'
 publishedAt: '2024-04-05'
-imgUrl: '/posts-posters/how-to-setup-windows.webp'
+imgUrl: '/posts/how-to-setup-windows/poster.webp'
 summary: 'This guide walks you through a streamlined setup process for a productive development environment on Windows. Learn essential installations and tips to enhance your workflow.'
 readTime: 5
 production: true
