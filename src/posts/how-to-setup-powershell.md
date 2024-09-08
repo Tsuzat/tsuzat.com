@@ -49,7 +49,7 @@ Before we get started, let's download and install few tools.
 
 - [**Wezterm**](https://github.com/wez/wezterm) - Wezterm is a gpu accelerated terminal emulator written in `Rust`. You can either install it by following official installation guide or you can install it using [scoop](https://scoop.sh). I have already explained the process of installing scoop and wezterm in [_my post_](/blogs/how-i-setup-windows).
 
-```powershell
+```sh
 # run following commands in powershell or cmd
 scoop bucket add extras
 scoop install wezterm
@@ -57,12 +57,12 @@ scoop install wezterm
 
 - [**Starship**](http://starship.rs) - Starship is a shell prompt. It'll help us display many useful information in shell(see image below)
 
-![starship preview]({starship})
+![starship preview](starship)
 _Preview of starship, I personally configured_
 
 To install starship, you need to run following command.
 
-```powershell
+```sh
 scoop install starship
 ```
 
@@ -79,7 +79,7 @@ But, you're here for a simple and straightforward explaination. Don't worry; I g
 you need to make a file in location `$HOME/.config/wezterm/wezterm.lua`. Windows do have `.config` folder in `$HOME`
 so you just need to make a `wezterm` folder in `$HOME/.config`. The structure should look like this
 
-```
+```text
 $HOME
   └──.config
         └──wezterm
@@ -443,25 +443,25 @@ as long as you can find and edit it.
 
 Once the file is created, I'll open default configuration file of powershell by using following commands.
 
-![powershell preview]({powershell1})
+![powershell preview](powershell1)
 _powershell 7 recommended to run all commands_
 
 > Warning: Run this command using powershell 7 only, to avoid conflicts.
 
-```powershell
+```sh
 notepad $PROFILE
 ```
 
 Inside the Nodepad, you need to add following line,
 `. $env:USERPROFILE\.dotfiles\powershell\user_profile.ps1` (see image)
 
-![powershell config preview]({powershell2})
+![powershell config preview](powershell2)
 _put the code in file and save using **Ctrl + S**_
 
 Now, we're ready to edit `user_profile.ps1` as per our need. Before, goind to the
 editing the `user_profile.ps1` itself. Let's install few packages.
 
-```powershell
+```sh
 # terminal icons provides the icons in terminal itself.
 # gsudo let us run Elevated commands like `sudo` in linux
 # scoop-completion provides auto complete in scoop commands on pressing <TAB>
@@ -475,7 +475,7 @@ Install-Module -Name PSReadLine
 Once, everything is installed, let's put the following code in `user_profile.ps1`.
 Try to understand each line of code.
 
-```powershell
+```sh
 # icons for powershell terminal
 # scoop install terminal-icons
 Import-Module Terminal-Icons
@@ -572,28 +572,28 @@ Invoke-Expression (&starship init powershell)
 
 All Done. Now you can open `wezterm`. Install `neofetch` using following command,
 
-```powershell
+```sh
 scoop install neofetch
 ```
 
 then run the command,
 
-```powershell
+```sh
 neofetch.exe
 ```
 
 You will see something like this.
 
-![preview]({preview1})
+![preview](preview1)
 _Preview after running neofetch_
 
 <details close>
     <summary>Click here to see other previews</summary>
 
-| catppuccin-mocha       | NeoSolarized-dark      |
-| ---------------------- | ---------------------- |
-| ![preview]({preview3}) | ![preview]({preview1}) |
-| ![preview]({preview4}) | ![preview]({preview2}) |
+| catppuccin-mocha     | NeoSolarized-dark    |
+| -------------------- | -------------------- |
+| ![preview](preview3) | ![preview](preview1) |
+| ![preview](preview4) | ![preview](preview2) |
 
 </details>
 

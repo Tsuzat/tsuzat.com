@@ -66,7 +66,7 @@ npm i -g live-server
 
 The `html` code looks like this,
 
-```html
+```html{1,3-4}
 <!doctype html>
 <html lang="en">
 	<head>
