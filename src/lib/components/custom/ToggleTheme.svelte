@@ -2,7 +2,7 @@
 	import { resetMode, setMode } from 'mode-watcher';
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
 	import { Button } from '$lib/components/ui/button/index.js';
-	import { Icons } from './icons/icons';
+	import { Icons } from './icons';
 	export let variant: 'link' | 'ghost' = 'link';
 	export let size: 'icon' | undefined = undefined;
 </script>
