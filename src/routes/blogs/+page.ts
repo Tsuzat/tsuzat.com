@@ -9,8 +9,6 @@ export const load: PageLoad = async ({ fetch }) => {
 
 	const posts: MarkdownPostMetadataAndSlug[] = await response.json();
 
-	console.log(posts.length);
-
 	return {
 		posts
 	};

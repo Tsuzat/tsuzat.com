@@ -1,25 +1,26 @@
 <script lang="ts">
 	import * as Avatar from '$lib/components/ui/avatar';
 	import profile from '$lib/assets/images/profile.jpg';
-	import { Icons } from '$lib/components/custom/icons/icons';
+	import { Icons } from '$lib/components/custom/icons';
 	import { onMount } from 'svelte';
 	import * as HoverCard from '$lib/components/ui/hover-card';
 	import type { PageData } from './$types';
 	import PostOverView from '$lib/components/custom/PostOverView.svelte';
+	import { toast } from 'svelte-sonner';
 
 	export let data: PageData;
 
 	const posts = data.posts;
 
 	onMount(() => {
-		// toast.warning('This Website is work in progess. Most of components are yet to build', {
-		// 	duration: 10000
-		// });
+		toast.warning('This Website is work in progess. Most of components are yet to build', {
+			duration: 10000
+		});
 	});
 </script>
 
 <svelte:head>
-	<title>Home | Tsuzat</title>
+	<title>Tsuzat | Alok Singh</title>
 </svelte:head>
 
 <div class="content">
@@ -33,7 +34,7 @@
 				<a href="/about" class="text-3xl text-foreground font-bold">Hey, I'm Tsuzat.</a>
 				<br />
 				<span class="text-2xl text-muted-foreground">
-					I'm a Software Engineer at
+					I'm a Software Engineer
 					<HoverCard.Root>
 						<HoverCard.Trigger
 							href="https://www.accenture.com/"
@@ -41,7 +42,7 @@
 							rel="noreferrer noopener"
 							class="transition-all text-[#a100ff] underline hover:drop-shadow-[0_0_1rem_#a100ff] duration-500"
 						>
-							Accenture
+							@Accenture
 						</HoverCard.Trigger>
 						<HoverCard.Content class="w-50">
 							<div class="flex justify-between space-x-4">
