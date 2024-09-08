@@ -5,7 +5,7 @@
 	export let loop: Boolean = false;
 	export let autoplay: Boolean = true;
 	export let hover: Boolean = true;
-	let className: string = '';
+	let className: string = 'size-14';
 	export { className as class };
 
 	let lottieContainer: HTMLElement;
