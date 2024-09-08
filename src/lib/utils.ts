@@ -83,3 +83,12 @@ export type post = {
 	readTime: number;
 	summary: string;
 };
+
+// Function to format date YYYY-MM-DD to Month DD, YYYY
+export function formatDate(date: string) {
+	return new Date(date).toLocaleDateString('en-US', {
+		month: 'long',
+		day: 'numeric',
+		year: 'numeric'
+	});
+}
