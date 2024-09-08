@@ -1,4 +1,6 @@
 import { fontFamily } from 'tailwindcss/defaultTheme';
+import aspect_ratio from '@tailwindcss/aspect-ratio';
+import typography from '@tailwindcss/typography';
 
 /** @type {import('tailwindcss').Config} */
 const config = {
@@ -56,9 +58,44 @@ const config = {
 			},
 			fontFamily: {
 				sans: [...fontFamily.sans]
+			},
+			typography(theme) {
+				return {
+					DEFAULT: {
+						css: {
+							'code::before': {
+								content: 'none' // don’t generate the pseudo-element
+								//                content: '""', // this is an alternative: generate pseudo element using an empty string
+							},
+							'code::after': {
+								content: 'none'
+							},
+							code: {
+								// color: theme('colors.white'),
+								// backgroundColor: 'hsl(var(--destructive) / <alpha-value>)',
+								borderRadius: theme('borderRadius.DEFAULT'),
+								paddingLeft: theme('spacing.1'),
+								paddingRight: theme('spacing.1'),
+								paddingTop: theme('spacing.1'),
+								paddingBottom: theme('spacing.1')
+							},
+							a: {
+								color: '#3b82f6',
+								textDecoration: 'none'
+							},
+							pre: {
+								backgroundColor: 'red'
+							}
+						}
+					}
+				};
 			}
 		}
-	}
+	},
+	corePlugins: {
+		aspectRatio: false
+	},
+	plugins: [aspect_ratio, typography]
 };
 
 export default config;

@@ -58,4 +58,36 @@
 		font-family: 'DM Sans Variable', sans-serif;
 		animation-fill-mode: forwards;
 	}
+
+	html.dark .shiki,
+	html.dark .shiki span {
+		color: var(--shiki-dark) !important;
+		background-color: var(--shiki-dark-bg) !important;
+		/* Optional, if you also want font styles */
+		font-style: var(--shiki-dark-font-style) !important;
+		font-weight: var(--shiki-dark-font-weight) !important;
+		text-decoration: var(--shiki-dark-text-decoration) !important;
+	}
+
+	html .shiki span.line-highlight,
+	html .shiki span.line-highlight > span {
+		@apply dark:bg-[#2d2e3f] bg-[#dde0e6] py-1 !important;
+	}
+
+	pre > code {
+		counter-reset: lineNumber; /* Initialize the counter */
+	}
+
+	/* pre > code .line {
+	} */
+
+	pre > code .line::before {
+		counter-increment: lineNumber; /* Increment the counter for each .line */
+		content: counter(lineNumber); /* Display the current line number */
+		width: 1rem;
+		margin-right: 1.5rem;
+		display: inline-block;
+		text-align: right;
+		@apply text-muted-foreground;
+	}
 }
