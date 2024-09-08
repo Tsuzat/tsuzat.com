@@ -1,6 +1,6 @@
 <script lang="ts">
 	import LottieIcon from './LottieIcon.svelte';
-	import animatedData from '$lib/assets/lottie/logo.json';
+	import animationData from '$lib/assets/lottie/logo.json';
 	import ThemeChanger from './ToggleTheme.svelte';
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
 	import { Button } from '$lib/components/ui/button';
@@ -10,7 +10,7 @@
 <nav>
 	<div class="flex justify-between items-center py-8">
 		<a href="/" class="text-xl flex items-center">
-			<LottieIcon animationData={animatedData} class="size-10" />
+			<LottieIcon {animationData} class="size-10" />
 			<span class="ml-4 text-xl text-muted-foreground font-bold sm:block hidden">TSUZAT</span>
 		</a>
 		<div class="hidden items-center justify-between sm:flex w-[50%]">
