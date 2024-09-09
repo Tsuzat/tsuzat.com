@@ -6,6 +6,8 @@
 	import type { PageData } from './$types';
 	import { page } from '$app/stores';
 	import '@fontsource-variable/fira-code';
+	import { Code } from 'svelte-radix';
+	import CodeInjection from '$lib/components/custom/CodeInjection.svelte';
 
 	export let data: PageData;
 
@@ -36,17 +38,19 @@
 	<p class="text-muted-foreground text-sm flex items-center my-2">
 		<Icons.calendar class="size-4 mr-2" />
 		<span>
-			Published: {formatDate(data.metadata.publishedAt)}
+			{formatDate(data.metadata.publishedAt)}
 		</span>
 		<Icons.clock class="size-4 ml-4 mr-2" />
 		<span>
-			Read Time: {data.metadata.readTime} mins
+			{data.metadata.readTime} mins
 		</span>
 	</p>
 	<p class="text-sm my-2 text-muted-foreground">{data.metadata.summary}</p>
 	<Separator class="my-4" />
 
 	<div class="post my-4 prose dark:prose-invert">
-		<svelte:component this={data.post} />
+		<CodeInjection>
+			<svelte:component this={data.post} />
+		</CodeInjection>
 	</div>
 </div>

@@ -12,6 +12,7 @@ import Device from 'lucide-svelte/icons/computer';
 import CalendarDays from 'lucide-svelte/icons/calendar-days';
 import Clock from 'lucide-svelte/icons/clock';
 import Copy from 'lucide-svelte/icons/copy';
+import CopyCheck from 'lucide-svelte/icons/copy-check';
 
 export const Icons = {
 	moon: Moon,
@@ -19,6 +20,7 @@ export const Icons = {
 	calendar: CalendarDays,
 	clock: Clock,
 	copy: Copy,
+	copyCheck: CopyCheck,
 	device: Device,
 	google: Google,
 	github: Github,

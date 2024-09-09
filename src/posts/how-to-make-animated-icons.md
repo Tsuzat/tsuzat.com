@@ -66,7 +66,7 @@ npm i -g live-server
 
 The `html` code looks like this,
 
-```html{1,3-4}
+```html{%h[1,3-4]%ga[5]%gd[6]%f[./hello.html]}
 <!doctype html>
 <html lang="en">
 	<head>

@@ -5,49 +5,78 @@ import slug from 'remark-slug';
 
 import { codeToHtml } from 'shiki';
 
+function returnArrayFromRangeString(rangeString) {
+	// The range string will be in the format "1-3,5,7-9"
+	const rangeArray = rangeString.split(',');
+	const resultArray = [];
+
+	rangeArray.forEach((range) => {
+		const rangeParts = range.split('-');
+		const start = parseInt(rangeParts[0]);
+		const end = parseInt(rangeParts[1]) || start;
+
+		for (let i = start; i <= end; i++) {
+			resultArray.push(i);
+		}
+	});
+
+	return resultArray;
+}
+
 async function codeHighlighter(code, langStr) {
 	let lang = undefined;
-	const lineOptions = [];
+	let lineHighlight = [];
+	let diffAdd = [];
+	let diffRemove = [];
+	let fileName = 'Terminal';
 
 	if (langStr) {
 		const langArr = langStr?.split('{');
 
 		lang = langArr[0];
 
-		let lineNumbersStr = langArr[1];
-
-		if (lineNumbersStr) {
-			lineNumbersStr = lineNumbersStr.substring(0, lineNumbersStr.length - 1);
-
-			const lineNumberRanges = lineNumbersStr.split(',');
-
-			lineNumberRanges.forEach((lineNumberRange) => {
-				const numbers = lineNumberRange.split('-');
-
-				const startNum = parseInt(numbers[0]);
-
-				lineOptions.push(startNum);
-
-				if (numbers.length > 1) {
-					const endNum = parseInt(numbers[1]);
-
-					for (let i = startNum + 1; i <= endNum; i++) {
-						lineOptions.push(i);
-					}
+		// args are in the format %h[1,3-4]%ga[5]%gd[6]%f[./hello.html]
+		if (langArr[1]) {
+			let args = langArr[1].split('}')[0].split('%');
+			for (let arg of args) {
+				if (arg.startsWith('h')) {
+					const lineRange = arg.split('[')[1].split(']')[0];
+					lineHighlight = returnArrayFromRangeString(lineRange);
+				} else if (arg.startsWith('ga')) {
+					const lineRange = arg.split('[')[1].split(']')[0];
+					diffAdd = returnArrayFromRangeString(lineRange);
+				} else if (arg.startsWith('gd')) {
+					const lineRange = arg.split('[')[1].split(']')[0];
+					diffRemove = returnArrayFromRangeString(lineRange);
+				} else if (arg.startsWith('f')) {
+					fileName = arg.split('[')[1].split(']')[0];
 				}
-			});
+			}
 		}
 	}
 
 	const shikiHtml = await codeToHtml(code, {
 		lang: lang,
-		theme: 'one-dark-pro',
+		themes: {
+			light: 'one-light',
+			dark: 'one-dark-pro'
+		},
 		transformers: [
 			{
+				code(node) {
+					// add the file name as a property
+					node.properties['data-file-name'] = fileName;
+				},
 				line(node, line) {
 					node.properties['data-line'] = line;
-					if (lineOptions.includes(line)) {
+					if (lineHighlight.includes(line)) {
 						this.addClassToHast(node, 'line-highlight');
+					}
+					if (diffAdd.includes(line)) {
+						this.addClassToHast(node, 'diff-add');
+					}
+					if (diffRemove.includes(line)) {
+						this.addClassToHast(node, 'diff-remove');
 					}
 				}
 			}
