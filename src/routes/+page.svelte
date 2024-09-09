@@ -68,7 +68,7 @@
 					target="_blank"
 					class="flex items-center hover:text-foreground hover:drop-shadow-[0_0_1rem_#000000] dark:hover:drop-shadow-[0_0_1rem_#FFFFFF] transition-all duration-500"
 				>
-					<Icons.github class="size-5 inline-block mr-2" />
+					<Icons.github class="size-5 inline-block" />
 					<span class="hidden sm:block">Github</span>
 				</a>
 				<a

@@ -77,14 +77,16 @@ const config = {
 								paddingLeft: theme('spacing.1'),
 								paddingRight: theme('spacing.1'),
 								paddingTop: theme('spacing.1'),
-								paddingBottom: theme('spacing.1')
+								paddingBottom: theme('spacing.1'),
+								overflowWrap: 'break-word'
 							},
 							a: {
 								color: '#3b82f6',
 								textDecoration: 'none'
 							},
 							pre: {
-								backgroundColor: 'red'
+								fontFamily: 'Fira Code Variable',
+								fontSize: '14px'
 							}
 						}
 					}

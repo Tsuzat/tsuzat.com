@@ -5,7 +5,7 @@
 	import { onMount } from 'svelte';
 	import type { PageData } from './$types';
 	import { page } from '$app/stores';
-	import CodeInjection from '$lib/components/custom/CodeInjection.svelte';
+	import '@fontsource-variable/fira-code';
 
 	export let data: PageData;
 
@@ -13,8 +13,6 @@
 		const codeTags = document.querySelectorAll('code');
 		if (codeTags) {
 			codeTags.forEach((tag) => {
-				// if tag has a "language-" class then do not apply
-				// for all the classes
 				if (tag.parentElement?.tagName === 'PRE') return;
 				tag.classList.add('text-forground', 'bg-muted');
 			});
@@ -33,7 +31,7 @@
 	<meta name="twitter:card" content="summary_large_image" />
 </svelte:head>
 
-<div>
+<div class="w-full">
 	<h1 class="text-3xl font-bold">{data.metadata.title}</h1>
 	<p class="text-muted-foreground text-sm flex items-center my-2">
 		<Icons.calendar class="size-4 mr-2" />

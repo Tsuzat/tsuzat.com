@@ -69,7 +69,7 @@ Install Scoop in a location like `C:\Development\Scoop`,
 and remember to add the `SCOOP` environment variable for seamless usage.
 ([Refer to](https://phoenixnap.com/kb/windows-set-environment-variable) for guidance if needed.)
 
-![scoop environment]({scoop})
+![scoop environment](scoop)
 _powertoys screenshot of environment variable scoop_
 
 Open the powershell that already comes with windows, and run

@@ -59,35 +59,16 @@
 		animation-fill-mode: forwards;
 	}
 
-	html.dark .shiki,
-	html.dark .shiki span {
-		color: var(--shiki-dark) !important;
-		background-color: var(--shiki-dark-bg) !important;
-		/* Optional, if you also want font styles */
-		font-style: var(--shiki-dark-font-style) !important;
-		font-weight: var(--shiki-dark-font-weight) !important;
-		text-decoration: var(--shiki-dark-text-decoration) !important;
+	pre.shiki {
+		@apply p-0 py-2 rounded-none bg-transparent !important;
 	}
 
-	html .shiki span.line-highlight,
-	html .shiki span.line-highlight > span {
-		@apply dark:bg-[#2d2e3f] bg-[#dde0e6] py-1 !important;
+	pre.shiki code {
+		/* counter-reset: lineNumber; */
+		@apply grid [&>span]:border-l-[3px] [&>span]:border-l-transparent [&>span]:pl-2 [&>span]:pr-3 [counter-reset:line] [&>span]:before:mr-3 [&>span]:before:inline-block [&>span]:before:w-4 [&>span]:before:text-right [&>span]:before:text-muted-foreground [&>span]:before:![content:counter(line)] [&>span]:before:[counter-increment:line];
 	}
 
-	pre > code {
-		counter-reset: lineNumber; /* Initialize the counter */
-	}
-
-	/* pre > code .line {
-	} */
-
-	pre > code .line::before {
-		counter-increment: lineNumber; /* Increment the counter for each .line */
-		content: counter(lineNumber); /* Display the current line number */
-		width: 1rem;
-		margin-right: 1.5rem;
-		display: inline-block;
-		text-align: right;
-		@apply text-muted-foreground;
+	pre.shiki code span.line-highlight {
+		@apply !border-l-blue-700/80 bg-blue-800/[15%];
 	}
 }

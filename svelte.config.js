@@ -39,14 +39,9 @@ async function codeHighlighter(code, langStr) {
 		}
 	}
 
-	console.log(lineOptions);
-
 	const shikiHtml = await codeToHtml(code, {
 		lang: lang,
-		themes: {
-			light: 'catppuccin-latte',
-			dark: 'catppuccin-mocha'
-		},
+		theme: 'one-dark-pro',
 		transformers: [
 			{
 				line(node, line) {
