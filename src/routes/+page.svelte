@@ -68,7 +68,7 @@
 					target="_blank"
 					class="flex items-center hover:text-foreground hover:drop-shadow-[0_0_1rem_#000000] dark:hover:drop-shadow-[0_0_1rem_#FFFFFF] transition-all duration-500"
 				>
-					<Icons.github class="size-5 inline-block" />
+					<Icons.github class="size-5 mr-2" />
 					<span class="hidden sm:block">Github</span>
 				</a>
 				<a
@@ -76,7 +76,7 @@
 					target="_blank"
 					class="flex items-center hover:text-[#0077b5] hover:drop-shadow-[0_0_1rem_#0077b5] transition-all duration-500"
 				>
-					<Icons.linkedin class="size-5 inline-block mr-2 text-[#0077b5]" />
+					<Icons.linkedin class="size-5 mr-2 text-[#0077b5]" />
 					<span class="hidden sm:block">LinkedIn</span>
 				</a>
 				<a
@@ -84,7 +84,7 @@
 					target="_blank"
 					class="flex items-center hover:text-[#ea4335] hover:drop-shadow-[0_0_1rem_#ea4335] transition-all duration-500"
 				>
-					<Icons.email class="size-5 inline-block mr-2 text-[#ea4335]" />
+					<Icons.email class="size-5 mr-2 text-[#ea4335]" />
 					<span class="hidden sm:block">Email</span>
 				</a>
 				<a
@@ -92,14 +92,14 @@
 					target="_blank"
 					class="flex items-center hover:text-foreground hover:drop-shadow-[0_0_1rem_#000000] dark:hover:drop-shadow-[0_0_1rem_#FFFFFF] transition-all duration-500"
 				>
-					<Icons.x class="size-5 inline-block mr-2" />
+					<Icons.x class="size-5 mr-2" />
 					<span class="hidden sm:block">X/Twitter</span>
 				</a>
 			</div>
 		</div>
 	</div>
 
-	<div id="posts" class="mt-16">
+	<div id="posts" class="my-8">
 		<div class="text-2xl font-bold mb-8">RECENT POSTS</div>
 		<div class="flex flex-col gap-4">
 			{#each posts as post}

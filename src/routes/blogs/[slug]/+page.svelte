@@ -6,20 +6,11 @@
 	import type { PageData } from './$types';
 	import { page } from '$app/stores';
 	import '@fontsource-variable/fira-code';
-	import { Code } from 'svelte-radix';
 	import CodeInjection from '$lib/components/custom/CodeInjection.svelte';
 
 	export let data: PageData;
 
-	onMount(async () => {
-		const codeTags = document.querySelectorAll('code');
-		if (codeTags) {
-			codeTags.forEach((tag) => {
-				if (tag.parentElement?.tagName === 'PRE') return;
-				tag.classList.add('text-forground', 'bg-muted');
-			});
-		}
-	});
+	onMount(async () => {});
 </script>
 
 <svelte:head>
