@@ -27,7 +27,7 @@
 					Published: {formatDate(post.metadata.publishedAt)}
 				</span>
 			</p>
-			<p class="text-sm">{post.metadata.summary}</p>
+			<p class="text-sm text-muted-foreground">{post.metadata.summary}</p>
 		</div>
 	</Card.Content>
 </Card.Root>
