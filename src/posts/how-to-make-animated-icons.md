@@ -66,7 +66,7 @@ npm i -g live-server
 
 The `html` code looks like this,
 
-```html{%h[1,3-4]%ga[5]%gd[6]%f[./hello.html]}
+```html{f[index.html]}
 <!doctype html>
 <html lang="en">
 	<head>
@@ -139,7 +139,7 @@ I'm considering the fact that you've basic understanding of `svelte`.
 
 Let's create a `svelte` component `LottieIcon.svelte` which can be reused.
 
-```svelte
+```svelte{%h[34-41]%f[LottieIcon.svelte]}
 <script lang = "ts">
 
 // Import the onMount
