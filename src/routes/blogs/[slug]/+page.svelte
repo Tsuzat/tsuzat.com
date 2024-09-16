@@ -10,7 +10,14 @@
 
 	export let data: PageData;
 
-	onMount(async () => {});
+	onMount(async () => {
+		// Find the code tags
+		const codeTags = document.querySelectorAll('code');
+		codeTags.forEach((codeTag) => {
+			if (codeTag.parentElement && codeTag.parentElement.tagName === 'PRE') return;
+			codeTag.classList.add('bg-muted', 'text-foreground');
+		});
+	});
 </script>
 
 <svelte:head>
