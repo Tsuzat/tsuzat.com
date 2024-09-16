@@ -88,6 +88,11 @@
 		text-decoration: var(--shiki-dark-text-decoration) !important;
 	}
 
+	blockquote p::after,
+	blockquote p::before {
+		content: '' !important;
+	}
+
 	pre.shiki code {
 		/* counter-reset: lineNumber; */
 		@apply grid [&>span]:border-l-[3px] [&>span]:border-l-transparent [&>span]:pl-2 [&>span]:pr-3 [counter-reset:line] [&>span]:before:mr-3 [&>span]:before:inline-block [&>span]:before:w-4 [&>span]:before:text-right [&>span]:before:text-muted-foreground [&>span]:before:![content:counter(line)] [&>span]:before:[counter-increment:line];

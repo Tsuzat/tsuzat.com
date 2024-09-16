@@ -17,6 +17,32 @@
 			if (codeTag.parentElement && codeTag.parentElement.tagName === 'PRE') return;
 			codeTag.classList.add('bg-muted', 'text-foreground');
 		});
+
+		const blockQuotes = document.querySelectorAll('blockquote');
+		blockQuotes.forEach((blockQuote) => {
+			const tagClass = blockQuote.textContent?.split(':')[0] || '';
+			switch (tagClass) {
+				case 'Warning':
+					blockQuote.classList.add(
+						'!border-l-orange-500/80',
+						'bg-orange-500/[15%]',
+						'text-orange-500'
+					);
+					break;
+				case 'Error':
+					blockQuote.classList.add('!border-l-red-500/80', 'bg-red-500/[15%]', 'text-red-500');
+					break;
+				case 'Info':
+					blockQuote.classList.add(
+						'!border-l-green-500/80',
+						'bg-green-500/[15%]',
+						'text-green-500'
+					);
+					break;
+				default:
+					break;
+			}
+		});
 	});
 </script>
 

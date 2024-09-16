@@ -1,6 +1,5 @@
 <script lang="ts">
 	import PostOverView from '$lib/components/custom/PostOverView.svelte';
-	import type { post } from '$lib/utils';
 	import type { PageData } from '../$types';
 
 	export let data: PageData;

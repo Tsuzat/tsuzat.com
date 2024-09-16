@@ -8,13 +8,13 @@ production: true
 ---
 
 <script>
-	// import starship from '$lib/assets/posts/how-to-setup-powershell/starship1.webp';
-  //   import powershell1 from '$lib/assets/posts/how-to-setup-powershell/powershell1.webp';
-  //   import powershell2 from '$lib/assets/posts/how-to-setup-powershell/powershell2.png';
-  //   import preview1 from '$lib/assets/posts/how-to-setup-powershell/preview1.png';
-  //   import preview2 from '$lib/assets/posts/how-to-setup-powershell/preview2.png';
-  //   import preview3 from '$lib/assets/posts/how-to-setup-powershell/preview3.png';
-  //   import preview4 from '$lib/assets/posts/how-to-setup-powershell/preview4.png';
+	import starship from '$lib/assets/posts/how-to-setup-powershell/starship1.webp';
+  import powershell1 from '$lib/assets/posts/how-to-setup-powershell/powershell1.webp';
+  import powershell2 from '$lib/assets/posts/how-to-setup-powershell/powershell2.png';
+  import preview1 from '$lib/assets/posts/how-to-setup-powershell/preview1.png';
+  import preview2 from '$lib/assets/posts/how-to-setup-powershell/preview2.png';
+  import preview3 from '$lib/assets/posts/how-to-setup-powershell/preview3.png';
+  import preview4 from '$lib/assets/posts/how-to-setup-powershell/preview4.png';
 </script>
 
 <details open>
@@ -57,7 +57,7 @@ scoop install wezterm
 
 - [**Starship**](http://starship.rs) - Starship is a shell prompt. It'll help us display many useful information in shell(see image below)
 
-![starship preview](starship)
+![starship preview]({starship})
 _Preview of starship, I personally configured_
 
 To install starship, you need to run following command.
@@ -97,7 +97,7 @@ $HOME
 
 Put the following code in catppuccin-mocha.toml
 
-```toml
+```toml{f[catppuccin-mocha.toml]}
 [colors]
 ansi = [
   '#45475a',
@@ -194,7 +194,7 @@ name = 'Catppuccin Mocha'
 
 Put the following code in NeoSolarized-dark.toml
 
-```toml
+```toml{f[NeoSolarized-dark.toml]}
 # NeoSolarized Dark
 
 [colors]
@@ -231,7 +231,7 @@ name = 'NeoSolarized Dark'
 Now, let's set up `wezterm.lua`. I have gone with following configurations.
 You can copy this code but I'd recommend to understand it first.
 
-```lua
+```lua{f[wezterm.lua]}
 local wezterm = require "wezterm"
 
 return {
@@ -277,7 +277,7 @@ Inside this file, you can put following code.
 
 Put this code in `starship.toml`
 
-```toml
+```toml{f[starship.toml]}
 ## FIRST LINE/ROW: Info & Status
 # First param ─┌
 [username]
@@ -443,7 +443,7 @@ as long as you can find and edit it.
 
 Once the file is created, I'll open default configuration file of powershell by using following commands.
 
-![powershell preview](powershell1)
+![powershell preview]({powershell1})
 _powershell 7 recommended to run all commands_
 
 > Warning: Run this command using powershell 7 only, to avoid conflicts.
@@ -455,7 +455,7 @@ notepad $PROFILE
 Inside the Nodepad, you need to add following line,
 `. $env:USERPROFILE\.dotfiles\powershell\user_profile.ps1` (see image)
 
-![powershell config preview](powershell2)
+![powershell config preview]({powershell2})
 _put the code in file and save using **Ctrl + S**_
 
 Now, we're ready to edit `user_profile.ps1` as per our need. Before, goind to the
@@ -475,7 +475,7 @@ Install-Module -Name PSReadLine
 Once, everything is installed, let's put the following code in `user_profile.ps1`.
 Try to understand each line of code.
 
-```sh
+```sh{f[user_profile.ps1]}
 # icons for powershell terminal
 # scoop install terminal-icons
 Import-Module Terminal-Icons
@@ -584,16 +584,16 @@ neofetch.exe
 
 You will see something like this.
 
-![preview](preview1)
+![preview]({preview1})
 _Preview after running neofetch_
 
 <details close>
     <summary>Click here to see other previews</summary>
 
-| catppuccin-mocha     | NeoSolarized-dark    |
-| -------------------- | -------------------- |
-| ![preview](preview3) | ![preview](preview1) |
-| ![preview](preview4) | ![preview](preview2) |
+| catppuccin-mocha       | NeoSolarized-dark      |
+| ---------------------- | ---------------------- |
+| ![preview]({preview3}) | ![preview]({preview1}) |
+| ![preview]({preview4}) | ![preview]({preview2}) |
 
 </details>
 
