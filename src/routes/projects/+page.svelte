@@ -9,7 +9,7 @@
 </script>
 
 <div>
-	<h1 class="text-center text-4xl font-bold">Projects</h1>
+	<h1 class="text-2xl font-bold">Projects</h1>
 	<div>
 		{#each projects as project}
 			<ProjectView {project} />

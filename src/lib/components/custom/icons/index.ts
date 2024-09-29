@@ -15,6 +15,9 @@ import Copy from 'lucide-svelte/icons/copy';
 import CopyCheck from 'lucide-svelte/icons/copy-check';
 import Location from 'lucide-svelte/icons/map-pin';
 import Briefcase from 'lucide-svelte/icons/briefcase';
+import Star from 'lucide-svelte/icons/star';
+
+// Logos
 import TypeScript from './langs/TypeScript.svelte';
 import Java from './langs/Java.svelte';
 import JavaScript from './langs/JavaScript.svelte';
@@ -32,6 +35,7 @@ export const Icons = {
 	copyCheck: CopyCheck,
 	location: Location,
 	briefcase: Briefcase,
+	star: Star,
 
 	// Logos
 	device: Device,

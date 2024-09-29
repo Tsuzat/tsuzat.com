@@ -16,7 +16,8 @@ export const load = async () => {
 			name: 'Kanban',
 			description: `Streamline your workflow with suckless, minimal, powerful and feature rich kanban board app. 
             Drag-and-drop tasks, write extensive notes on tasks, and stay on top of your projects.`,
-			url: 'https://kanban.tsuzat.com'
+			url: 'https://kanban.tsuzat.com',
+			stars: 16
 		}
 	];
 	return {
