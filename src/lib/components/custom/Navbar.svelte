@@ -14,7 +14,7 @@
 			<span class="ml-4 text-xl text-muted-foreground font-bold sm:block hidden">TSUZAT</span>
 		</a>
 		<div class="hidden items-center justify-between sm:flex w-[50%]">
-			{#each ['about', 'blogs', 'contact'] as a}
+			{#each ['about', 'blogs', 'projects'] as a}
 				<a
 					aria-current={$page.url.pathname === `/${a}` ? 'page' : undefined}
 					class="link text-muted-foreground capitalize aria-[current=page]:text-foreground aria-[current=page]:bg-muted px-2 py-1 rounded-md hover:text-foreground transition-all"

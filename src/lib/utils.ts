@@ -92,3 +92,28 @@ export function formatDate(date: string) {
 		year: 'numeric'
 	});
 }
+
+// Function to return the time gap between two dates in Years & Months
+export function getTimeGap(startDate: string, endDate: string) {
+	const start = new Date(startDate);
+	const end = new Date(endDate);
+
+	const diffInYears = end.getFullYear() - start.getFullYear();
+	const diffInMonths = end.getMonth() - start.getMonth();
+
+	let diff = '';
+	if (diffInYears > 0) {
+		diff = `${diffInYears} Years `;
+	}
+	if (diffInMonths > 0) {
+		diff += `${diffInMonths} Months`;
+	}
+	return diff;
+}
+
+export interface Project {
+	name: string;
+	description: string;
+	url: string;
+	stars?: number | null;
+}
