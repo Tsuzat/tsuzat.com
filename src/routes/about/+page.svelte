@@ -1,11 +1,7 @@
 <script lang="ts">
+	import tata from '$lib/assets/images/Tata_Group.png';
 	import { Icons } from '$lib/components/custom/icons';
-	import Avatar from '$lib/components/ui/avatar/avatar.svelte';
-	import { formatDate } from '$lib/utils';
-	import type { PageData } from './$types';
-
-	export let data: PageData;
-	const experiences = data.expirences;
+	import { formatDate, getTimeGap } from '$lib/utils';
 </script>
 
 <svelte:head>
@@ -27,7 +23,7 @@
 		<div class="text-muted-foreground tracking-wide">
 			I specialize in building user-friendly and efficient software. I'm always looking for new
 			challenges and opportunities to grow my skills and knowledge. My skills include <strong>
-				Java, JavaScript, TypeScript, Python, SvelteKit, Flutter, Spring, Tailwind, Git
+				Java, JavaScript, TypeScript, Python, GenAI, SvelteKit, Flutter, Spring, Tailwind, Git
 			</strong>
 			etc. See my
 			<a
@@ -35,6 +31,33 @@
 				target="_blank"
 				class="text-blue-500 underline">resume</a
 			> for more details.
+		</div>
+
+		<div class="my-4 *:my-4">
+			<div class="flex items-center">
+				<Icons.accenture class="size-6 text-[#a100ff] mr-6" />
+				<div>
+					<span class="text-xl font-bold mr-4"> Accenture In India </span>
+					<p>Software Engineer</p>
+				</div>
+				<div class="flex flex-col ml-auto text-sm text-muted-foreground">
+					<span>{formatDate('2023-08-08')}</span>
+					<span>
+						{getTimeGap('2023-08-08', new Date().toISOString().split('T')[0])}
+					</span>
+				</div>
+			</div>
+			<div class="flex items-center">
+				<img src={tata} alt="Tata Group" class="size-6 mr-4" />
+				<div>
+					<span class="text-xl font-bold mr-4">Tata Steel</span>
+					<p>Summer Intern</p>
+				</div>
+				<div class="flex flex-col ml-auto text-sm text-right text-muted-foreground">
+					<span>May 2023 - Jul 2022</span>
+					<span>3 Months</span>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
