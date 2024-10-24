@@ -115,5 +115,17 @@ export interface Project {
 	name: string;
 	description: string;
 	url: string;
-	stars?: number | null;
+	stars?: string | number | null;
+}
+
+/**
+ * Fetches the number of stars for a GitHub repository
+ * @param username - username of the repository owner
+ * @param repo - repository name
+ * @returns Promise<string> - stars count
+ */
+export async function getGithubStars(username: string, repo: string): Promise<string> {
+	const response = await fetch(`https://api.github.com/repos/${username}/${repo}`);
+	const data = await response.json();
+	return data.stargazers_count.toString();
 }

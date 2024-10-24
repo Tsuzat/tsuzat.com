@@ -6,17 +6,10 @@
 	import * as HoverCard from '$lib/components/ui/hover-card';
 	import type { PageData } from './$types';
 	import PostOverView from '$lib/components/custom/PostOverView.svelte';
-	import { toast } from 'svelte-sonner';
 
 	export let data: PageData;
 
 	const posts = data.posts;
-
-	onMount(() => {
-		toast.warning('This Website is work in progess. Most of components are yet to build', {
-			duration: 10000
-		});
-	});
 </script>
 
 <svelte:head>
