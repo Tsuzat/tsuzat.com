@@ -13,6 +13,13 @@ export const load = async () => {
 			stars: await getGithubStars('Tsuzat', 'NeoSolarized.nvim')
 		},
 		{
+			name: 'Shad Editor',
+			description:
+				'An editor with rich text features and a beautiful UI, provides full flexibility and customizable components ready to copy and paste, made for developers.',
+			url: 'https://shad-editor.tsuzat.com',
+			stars: await getGithubStars('Tsuzat', 'ShadEditor')
+		},
+		{
 			name: 'Kanban',
 			description: `Streamline your workflow with suckless, minimal, powerful and feature rich kanban board app. 
             Drag-and-drop tasks, write extensive notes on tasks, and stay on top of your projects.`,
