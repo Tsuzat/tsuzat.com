@@ -42,6 +42,7 @@
 	},
 	"dependencies": {
 		"@fontsource-variable/dm-sans": "^5.1.0",
-		"@tailwindcss/typography": "^0.5.15"
+		"@tailwindcss/typography": "^0.5.15",
+		"mode-watcher": "^0.5.0"
 	}
 }
