@@ -47,6 +47,7 @@
 							target="_blank"
 							rel="noreferrer noopener"
 							class="text-[#a100ff] underline transition-all duration-500 hover:drop-shadow-[0_0_1rem_#a100ff]"
+							title="Accenture Hover Card"
 						>
 							@Accenture
 						</HoverCard.Trigger>
@@ -73,6 +74,7 @@
 					href="https://github.com/Tsuzat"
 					target="_blank"
 					class="flex items-center transition-all duration-500 hover:text-foreground hover:drop-shadow-[0_0_1rem_#000000] dark:hover:drop-shadow-[0_0_1rem_#FFFFFF]"
+					title="Github Link"
 				>
 					<Github class="mr-2 size-5" />
 					<span class="hidden sm:block">Github</span>
@@ -81,6 +83,7 @@
 					href="https://www.linkedin.com/in/alok-singh-tsuzat"
 					target="_blank"
 					class="flex items-center transition-all duration-500 hover:text-[#0077b5] hover:drop-shadow-[0_0_1rem_#0077b5]"
+					title="Linkedin Link"
 				>
 					<Linkedin class="mr-2 size-5 text-[#0077b5]" />
 					<span class="hidden sm:block">LinkedIn</span>
@@ -89,6 +92,7 @@
 					href="mailto:contact@tsuzat.com "
 					target="_blank"
 					class="flex items-center transition-all duration-500 hover:text-[#ea4335] hover:drop-shadow-[0_0_1rem_#ea4335]"
+					title="Email"
 				>
 					<Email class="mr-2 size-5 text-[#ea4335]" />
 					<span class="hidden sm:block">Email</span>
@@ -97,6 +101,7 @@
 					href="https://x.com/TheTsuzat"
 					target="_blank"
 					class="flex items-center transition-all duration-500 hover:text-foreground hover:drop-shadow-[0_0_1rem_#000000] dark:hover:drop-shadow-[0_0_1rem_#FFFFFF]"
+					title="Twitter/X"
 				>
 					<Twitter class="mr-2 size-5" />
 					<span class="hidden sm:block">X/Twitter</span>

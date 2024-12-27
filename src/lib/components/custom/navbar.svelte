@@ -14,7 +14,7 @@
 </script>
 
 <nav class="flex w-full items-center justify-between py-2">
-	<a href="/" class="inline-flex items-center gap-4 text-xl font-bold">
+	<a href="/" class="inline-flex items-center gap-4 text-xl font-bold" title="Home">
 		<Lottie animationData={lottieLogo} class="size-12" />
 		<span class="hidden text-muted-foreground sm:block">TSUZAT</span>
 	</a>
@@ -24,6 +24,7 @@
 				class:current={page.url.pathname.startsWith(`/${link}`)}
 				href="/{link}"
 				class="hidden capitalize sm:block"
+				title="/{link}"
 			>
 				{link}
 			</a>
@@ -40,6 +41,7 @@
 						onclick={() => {
 							goto(`/${link}`);
 						}}
+						title="/{link}"
 						class={cn(page.url.pathname.startsWith(`/${link}`) && 'underline', 'capitalize')}
 					>
 						{link}
