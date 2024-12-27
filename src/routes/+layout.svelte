@@ -5,6 +5,8 @@
 	import Navbar from '$lib/components/custom/navbar.svelte';
 	import Footer from '$lib/components/custom/footer.svelte';
 	import Sonner from '$lib/components/ui/sonner/sonner.svelte';
+	import { Button } from '$lib/components/ui/button';
+	import { ArrowUp } from 'lucide-svelte';
 	let { children } = $props();
 </script>
 
@@ -24,6 +26,14 @@
 <ModeWatcher />
 <Sonner richColors />
 <div class="m-auto max-w-3xl p-2">
+	<Button
+		variant="outline"
+		size="icon"
+		class="fixed bottom-4 right-4 rounded-full"
+		onclick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+	>
+		<ArrowUp />
+	</Button>
 	<Navbar />
 	{@render children()}
 	<Footer />
