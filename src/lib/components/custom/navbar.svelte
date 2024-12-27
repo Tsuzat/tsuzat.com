@@ -3,6 +3,12 @@
 	import Lottie from '$lib/components/custom/lottie.svelte';
 	import lottieLogo from '$lib/assets/logo.json';
 	import Themeswitcher from './theme-switcher.svelte';
+	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
+	import { buttonVariants } from '../ui/button';
+	import { Plus } from 'lucide-svelte';
+	import clsx from 'clsx';
+	import { cn } from '$lib/utils';
+	import { goto } from '$app/navigation';
 
 	const links = ['about', 'projects', 'blogs'];
 </script>
@@ -14,16 +20,39 @@
 	</a>
 	<div id="links" class="inline-flex items-center justify-end gap-8">
 		{#each links as link}
-			<a class:current={page.url.pathname === `/${link}`} href="/{link}" class="capitalize">
+			<a
+				class:current={page.url.pathname === `/${link}`}
+				href="/{link}"
+				class="hidden capitalize sm:block"
+			>
 				{link}
 			</a>
 		{/each}
+		<DropdownMenu.Root>
+			<DropdownMenu.Trigger
+				class={buttonVariants({ variant: 'link', class: 'text-muted-foreground sm:hidden' })}
+			>
+				<Plus /> Links
+			</DropdownMenu.Trigger>
+			<DropdownMenu.Content>
+				{#each links as link}
+					<DropdownMenu.Item
+						onclick={() => {
+							goto(`/${link}`);
+						}}
+						class={cn(page.url.pathname === `/${link}` && 'underline', 'capitalize')}
+					>
+						{link}
+					</DropdownMenu.Item>
+				{/each}
+			</DropdownMenu.Content>
+		</DropdownMenu.Root>
 		<Themeswitcher />
 	</div>
 </nav>
 
 <style>
 	a.current {
-		text-decoration: underline;
+		text-decoration: underline !important;
 	}
 </style>
