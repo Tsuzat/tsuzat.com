@@ -8,8 +8,8 @@ production: true
 ---
 
 <script>
-	import LottieIcon from '$lib/components/custom/LottieIcon.svelte';
-	import animationData from '$lib/assets/lottie/logo.json';
+	import LottieIcon from '$lib/components/custom/lottie.svelte';
+	import animationData from '$lib/assets/logo.json';
 </script>
 
 <details open>
