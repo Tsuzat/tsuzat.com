@@ -21,7 +21,7 @@
 	<div id="links" class="inline-flex items-center justify-end gap-8">
 		{#each links as link}
 			<a
-				class:current={page.url.pathname === `/${link}`}
+				class:current={page.url.pathname.startsWith(`/${link}`)}
 				href="/{link}"
 				class="hidden capitalize sm:block"
 			>
@@ -40,7 +40,7 @@
 						onclick={() => {
 							goto(`/${link}`);
 						}}
-						class={cn(page.url.pathname === `/${link}` && 'underline', 'capitalize')}
+						class={cn(page.url.pathname.startsWith(`/${link}`) && 'underline', 'capitalize')}
 					>
 						{link}
 					</DropdownMenu.Item>
