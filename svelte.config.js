@@ -1,5 +1,5 @@
 import { mdsvex, escapeSvelte } from 'mdsvex';
-import adapter from '@sveltejs/adapter-static';
+import adapter from '@sveltejs/adapter-auto';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { codeToHtml } from 'shiki';
 
@@ -100,19 +100,8 @@ const config = {
 	preprocess: [vitePreprocess({ script: true }), mdsvex(mdsvexConfigs)],
 
 	kit: {
-		adapter: adapter({
-			pages: 'build',
-			assets: 'build',
-			fallback: 'index.html',
-			precompress: true,
-			strict: false
-		})
+		adapter: adapter()
 	},
-	compilerOptions: {
-		css: 'injected',
-		enableSourcemap: true
-	},
-
 	extensions: ['.svelte', '.md']
 };
 
