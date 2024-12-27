@@ -1,6 +1,3 @@
-export const prerender = true;
-export const ssr = true;
-
 import type { MarkdownPostMetadataAndSlug } from '$lib/utils';
 
 import type { PageLoad } from './$types';

@@ -1,5 +1,5 @@
 import { mdsvex, escapeSvelte } from 'mdsvex';
-import adapter from '@sveltejs/adapter-auto';
+import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { codeToHtml } from 'shiki';
 
@@ -97,13 +97,20 @@ const mdsvexConfigs = {
 const config = {
 	// Consult https://svelte.dev/docs/kit/integrations
 	// for more information about preprocessors
-	preprocess: [vitePreprocess(), mdsvex(mdsvexConfigs)],
+	preprocess: [vitePreprocess({ script: true }), mdsvex(mdsvexConfigs)],
 
 	kit: {
-		// adapter-auto only supports some environments, see https://svelte.dev/docs/kit/adapter-auto for a list.
-		// If your environment is not supported, or you settled on a specific environment, switch out the adapter.
-		// See https://svelte.dev/docs/kit/adapters for more information about adapters.
-		adapter: adapter()
+		adapter: adapter({
+			pages: 'build',
+			assets: 'build',
+			fallback: 'index.html',
+			precompress: true,
+			strict: false
+		})
+	},
+	compilerOptions: {
+		css: 'injected',
+		enableSourcemap: true
 	},
 
 	extensions: ['.svelte', '.md']
