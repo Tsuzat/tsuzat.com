@@ -29,7 +29,8 @@
 	<Button
 		variant="outline"
 		size="icon"
-		class="fixed bottom-4 right-4 rounded-full"
+		class="fixed bottom-4 right-4 z-40 rounded-full"
+		title="Scroll to top"
 		onclick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
 	>
 		<ArrowUp />

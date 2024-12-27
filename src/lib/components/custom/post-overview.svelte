@@ -12,7 +12,7 @@
 </script>
 
 <Card.Root
-	class="py-4 transition-all duration-500 hover:scale-105 hover:cursor-pointer sm:flex"
+	class="py-4 transition-all duration-500 hover:scale-[101%] hover:cursor-pointer sm:flex"
 	onclick={() => {
 		goto(`/blogs/${post.slug}`);
 	}}

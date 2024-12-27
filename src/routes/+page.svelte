@@ -1,7 +1,7 @@
 <script lang="ts">
 	import * as Avatar from '$lib/components/ui/avatar';
 	import * as HoverCard from '$lib/components/ui/hover-card';
-	import profile from '$lib/assets/profile.jpg';
+	import profile from '$lib/assets/profile.webp';
 	import Accenture from '$lib/components/icons/accenture.svelte';
 	import { Calendar } from 'lucide-svelte';
 	import Github from '$lib/components/icons/github.svelte';
