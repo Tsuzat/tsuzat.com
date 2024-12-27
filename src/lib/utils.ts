@@ -66,6 +66,7 @@ export interface Project {
 	description: string;
 	url: string;
 	stars?: string | number | null;
+	badges?: string[];
 }
 
 /**
