@@ -4,6 +4,7 @@
 	import { ModeWatcher } from 'mode-watcher';
 	import Navbar from '$lib/components/custom/navbar.svelte';
 	import Footer from '$lib/components/custom/footer.svelte';
+	import Sonner from '$lib/components/ui/sonner/sonner.svelte';
 	let { children } = $props();
 </script>
 
@@ -21,7 +22,8 @@
 </svelte:head>
 
 <ModeWatcher />
-<div class="m-auto max-w-4xl p-2">
+<Sonner richColors />
+<div class="m-auto max-w-3xl p-2">
 	<Navbar />
 	{@render children()}
 	<Footer />
