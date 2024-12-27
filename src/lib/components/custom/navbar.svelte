@@ -2,7 +2,7 @@
 	import { page } from '$app/state';
 	import Lottie from '$lib/components/custom/lottie.svelte';
 	import lottieLogo from '$lib/static/logo.json';
-	import Themeswitcher from './themeswitcher.svelte';
+	import Themeswitcher from './theme-switcher.svelte';
 
 	const links = ['about', 'projects', 'blogs'];
 </script>
