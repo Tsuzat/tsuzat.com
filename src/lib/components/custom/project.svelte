@@ -10,7 +10,7 @@
 	let { project }: Props = $props();
 </script>
 
-<a href={project.url} target="_blank">
+<a href={project.url} target="_blank" title={project.name}>
 	<Card.Root
 		class="my-4 py-2 transition-all duration-500 hover:scale-105 hover:cursor-pointer sm:flex"
 	>

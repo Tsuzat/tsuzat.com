@@ -24,8 +24,11 @@
 		{/each}
 	</div>
 	<p>
-		Check More Projects on <a href="https://github.com/Tsuzat" target="_blank" class="text-blue-500"
-			>GitHub</a
+		Check More Projects on <a
+			href="https://github.com/Tsuzat"
+			target="_blank"
+			class="text-blue-500"
+			title="Github Link">GitHub</a
 		>
 	</p>
 </div>
