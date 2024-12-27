@@ -85,4 +85,18 @@
 	body {
 		@apply bg-background text-foreground;
 	}
+	/* Only for Desktop */
+	@media (min-width: 640px) {
+		*::-webkit-scrollbar-track {
+			@apply rounded bg-transparent;
+		}
+
+		*::-webkit-scrollbar {
+			@apply size-2 bg-transparent;
+		}
+
+		*::-webkit-scrollbar-thumb {
+			@apply rounded bg-muted-foreground dark:bg-muted;
+		}
+	}
 }
