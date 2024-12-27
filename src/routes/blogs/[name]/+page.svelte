@@ -48,6 +48,16 @@
 					break;
 			}
 		});
+		// Add ID to all headings
+		const headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
+		headings.forEach((heading) => {
+			if (!heading.textContent) return;
+			// remove spaces and special characters with regex by replacing them with '-'
+			heading.id = heading.textContent
+				.replace(/[^a-zA-Z0-9 -]/g, '')
+				.replace(/\s+/g, '-')
+				.toLowerCase();
+		});
 	});
 </script>
 
