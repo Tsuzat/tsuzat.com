@@ -3,6 +3,7 @@
 	import '../app.css';
 	import { ModeWatcher } from 'mode-watcher';
 	import Navbar from '$lib/components/custom/navbar.svelte';
+	import Footer from '$lib/components/custom/footer.svelte';
 	let { children } = $props();
 </script>
 
@@ -20,7 +21,8 @@
 </svelte:head>
 
 <ModeWatcher />
-<div class="m-auto max-w-4xl">
+<div class="m-auto max-w-4xl p-2">
 	<Navbar />
 	{@render children()}
+	<Footer />
 </div>
