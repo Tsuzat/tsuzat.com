@@ -18,7 +18,7 @@ export const load = async () => {
 				'An editor with rich text features and a beautiful UI, provides full flexibility and customizable components ready to copy and paste, made for developers.',
 			url: 'https://shad-editor.tsuzat.com',
 			stars: await getGithubStars('Tsuzat', 'ShadEditor'),
-			badges: ['https://waka-api.dev-tsuzat.workers.dev/Nota']
+			badges: ['https://waka-api.dev-tsuzat.workers.dev/ShadEditor']
 		},
 		{
 			name: 'Kanban',
