@@ -6,7 +6,7 @@
 </script>
 
 <footer class="footer my-4 flex items-center justify-between py-4 text-muted-foreground">
-	<div>© Alok "Tsuzat" Singh {new Date().getFullYear() + 1}</div>
+	<div>© {new Date().getFullYear()} Alok "Tsuzat" Singh</div>
 	<div class="flex items-center gap-4">
 		<a href="https://github.com/Tsuzat" target="_blank" title="Github Link">
 			<Github class="size-4" />
