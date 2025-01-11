@@ -6,7 +6,6 @@
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
 	import { buttonVariants } from '../ui/button';
 	import { Plus } from 'lucide-svelte';
-	import clsx from 'clsx';
 	import { cn } from '$lib/utils';
 	import { goto } from '$app/navigation';
 

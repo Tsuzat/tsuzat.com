@@ -2,10 +2,10 @@
 	import { onMount } from 'svelte';
 
 	interface Props {
-		animationData: {};
-		loop?: Boolean;
-		autoplay?: Boolean;
-		hover?: Boolean;
+		animationData: object;
+		loop?: boolean;
+		autoplay?: boolean;
+		hover?: boolean;
 		class?: string;
 	}
 
@@ -21,7 +21,6 @@
 
 	onMount(async () => {
 		const lottie = await import('lottie-web');
-		//@ts-ignore
 		const animation = lottie.loadAnimation({
 			container: lottieContainer,
 			animationData,
@@ -34,7 +33,7 @@
 		animation.play();
 
 		if (hover) {
-			lottieContainer.addEventListener('mouseenter', (_) => {
+			lottieContainer.addEventListener('mouseenter', () => {
 				// if it is already playing then stopanimation.setDirection(1);
 				animation.stop();
 				animation.setDirection();
