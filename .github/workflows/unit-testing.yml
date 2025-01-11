@@ -51,3 +51,6 @@ jobs:
           path: |
             vitest.results.json
             coverage/
+
+      - name: Run lint
+        run: pnpm lint
