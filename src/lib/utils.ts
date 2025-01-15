@@ -48,14 +48,16 @@ export function getTimeGap(startDate: string, endDate: string) {
 	const start = new Date(startDate);
 	const end = new Date(endDate);
 
-	const diffInYears = end.getFullYear() - start.getFullYear();
-	const diffInMonths = end.getMonth() - start.getMonth();
+	let timeDiff = end.getTime() - start.getTime();
+	let diffInYears = Math.floor(timeDiff / (1000 * 60 * 60 * 24 * 365));
+	let diffInMonths = Math.floor(timeDiff / (1000 * 60 * 60 * 24 * 30));
 
 	let diff = '';
 	if (diffInYears > 0) {
 		diff = `${diffInYears} Years `;
 	}
 	if (diffInMonths > 0) {
+		diffInMonths -= 12;
 		diff += `${diffInMonths} Months`;
 	}
 	return diff;
