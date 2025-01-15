@@ -43,7 +43,7 @@
 				<div class="ml-auto flex flex-col text-sm text-muted-foreground">
 					<span>{formatDate('2023-08-08')}</span>
 					<span>
-						{getTimeGap('2023-08-08', new Date().toISOString().split('T')[0])}
+						{getTimeGap('2023-08-08', new Date().toDateString())}
 					</span>
 				</div>
 			</div>
