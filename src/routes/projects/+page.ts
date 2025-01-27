@@ -1,6 +1,3 @@
-export const prerender = true;
-export const ssr = true;
-
 import { getGithubStars, type Project } from '$lib/utils';
 
 export const load = async () => {

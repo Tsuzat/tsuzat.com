@@ -100,8 +100,23 @@ const config = {
 	preprocess: [vitePreprocess({ script: true }), mdsvex(mdsvexConfigs)],
 
 	kit: {
-		adapter: adapter()
+		adapter: adapter({
+			pages: 'build',
+			assets: 'build',
+			fallback: 'index.html',
+			precompress: true,
+			strict: false
+		}),
+		prerender: {
+			entries: ['*'],
+			handleMissingId: 'ignore'
+		}
 	},
+	compilerOptions: {
+		css: 'injected',
+		enableSourcemap: true
+	},
+
 	extensions: ['.svelte', '.md']
 };
 

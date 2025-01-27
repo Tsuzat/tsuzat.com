@@ -1,7 +1,7 @@
 import type { PageLoad } from './$types';
 import type { MarkdownPost } from '$lib/utils';
 
-export const ssr = true;
+export const prerender = 'auto';
 
 export const load: PageLoad = async ({ params }) => {
 	const slug = params.name;
