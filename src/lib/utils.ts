@@ -67,18 +67,43 @@ export interface Project {
 	name: string;
 	description: string;
 	url: string;
-	stars?: string | number | null;
+	stars?: {
+		author: string;
+		repo: string;
+	};
 	badges?: string[];
 }
 
-/**
- * Fetches the number of stars for a GitHub repository
- * @param username - username of the repository owner
- * @param repo - repository name
- * @returns Promise<string> - stars count
- */
-export async function getGithubStars(username: string, repo: string): Promise<string> {
-	const response = await fetch(`https://api.github.com/repos/${username}/${repo}`);
-	const data = await response.json();
-	return data.stargazers_count.toString();
-}
+export const MYPROJECTS: Project[] = [
+	{
+		name: 'Edra',
+		description:
+			'A Rich Text Editor made with Tiptap for Svelte Developers with extensibility and proper data output. Focused on ease of use and copied to your project as an component, with beautiful default UI',
+		url: 'https://edra.tsuzat.com',
+		stars: {
+			author: 'Tsuzat',
+			repo: 'Edra'
+		},
+		badges: ['https://waka-api.dev-tsuzat.workers.dev/Edra']
+	},
+	{
+		name: 'NeoSolarzined.nvim',
+		description: `A dark and light Neovim theme written in Lua ported from NeoSolarized with better syntax highlighting. 
+                Includes extra themes for Kitty, Alacritty, Wezterm, Konsole and Windows Terminal.`,
+		url: 'https://github.com/Tsuzat/NeoSolarized.nvim',
+		stars: {
+			author: 'Tsuzat',
+			repo: 'NeoSolarized.nvim'
+		}
+	},
+	{
+		name: 'Kanban',
+		description: `Streamline your workflow with suckless, minimal, powerful and feature rich kanban board app. 
+            Drag-and-drop tasks, write extensive notes on tasks, and stay on top of your projects.`,
+		url: 'https://kanban.tsuzat.com',
+		stars: {
+			author: 'Tsuzat',
+			repo: 'kanban'
+		}
+	}
+];
