@@ -10,6 +10,8 @@
 	import Twitter from '$lib/components/icons/twitter.svelte';
 	import PostOverview from '$lib/components/custom/post-overview.svelte';
 	import type { PageData } from './$types';
+	import Project from '$lib/components/custom/project.svelte';
+	import { MYPROJECTS } from '$lib/utils';
 
 	interface Props {
 		data: PageData;
@@ -111,7 +113,12 @@
 	</div>
 
 	<div id="posts" class="my-8">
-		<div class="mb-8 text-2xl font-bold">RECENT POSTS</div>
+		<div class="mb-8 text-2xl font-bold">Recent Project</div>
+		<Project project={MYPROJECTS[0]} />
+	</div>
+
+	<div id="posts" class="my-8">
+		<div class="mb-8 text-2xl font-bold">Recent Posts</div>
 		<div class="flex flex-col gap-4">
 			{#each posts as post}
 				<PostOverview {post} />
