@@ -6,7 +6,13 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 // utils for markdown posts
-import type { ComponentType } from 'svelte';
+import type { Component, ComponentType } from 'svelte';
+import Git from './components/icons/git.svelte';
+import Tailwind from './components/icons/tailwind.svelte';
+import Svelte from './components/icons/svelte.svelte';
+import Ts from './components/icons/ts.svelte';
+import Figma from './components/icons/figma.svelte';
+import Vercel from './components/icons/vercel.svelte';
 
 export type MarkdownPost = {
 	metadata: {
@@ -106,4 +112,20 @@ export const MYPROJECTS: Project[] = [
 			repo: 'kanban'
 		}
 	}
+];
+
+export interface Skill {
+	title: string;
+	description: string;
+	icon: Component;
+	color: string;
+}
+
+export const MYSKILLS: Skill[] = [
+	{ title: 'Git', description: 'Version control system', icon: Git, color: '#f34f29' },
+	{ title: 'Tailwind', description: 'CSS framework', icon: Tailwind, color: '#38bdf8' },
+	{ title: 'Svelte', description: 'Frontend framework', icon: Svelte, color: '#ff3e00' },
+	{ title: 'TypeScript', description: 'Statically typed JS', icon: Ts, color: '#3178c6' },
+	{ title: 'Figma', description: 'UI design tool', icon: Figma, color: '#0acf83' },
+	{ title: 'Vercel', description: 'Serverless hosting', icon: Vercel, color: '#808080' }
 ];
