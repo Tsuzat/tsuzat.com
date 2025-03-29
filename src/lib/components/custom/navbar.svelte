@@ -12,7 +12,9 @@
 	const links = ['about', 'projects', 'blogs'];
 </script>
 
-<nav class="flex w-full items-center justify-between py-2">
+<nav
+	class="sticky top-0 z-50 flex w-full items-center justify-between bg-background/50 py-2 backdrop-blur-lg"
+>
 	<a href="/" class="inline-flex items-center gap-4 text-xl font-bold" title="Home">
 		<Lottie animationData={lottieLogo} class="size-12" />
 		<span class="hidden text-muted-foreground sm:block">TSUZAT</span>
