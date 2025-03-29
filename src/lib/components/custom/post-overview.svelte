@@ -2,7 +2,7 @@
 	import { formatDate, type MarkdownPostMetadataAndSlug } from '$lib/utils';
 	import * as Card from '$lib/components/ui/card';
 	import { goto } from '$app/navigation';
-	import { Calendar } from 'lucide-svelte';
+	import { CalendarDays } from 'lucide-svelte';
 
 	interface Props {
 		post: MarkdownPostMetadataAndSlug;
@@ -21,10 +21,11 @@
 		<div id="content" class="*:py-1">
 			<div class="text-2xl font-bold">{post.metadata.title}</div>
 			<p class="flex items-center text-sm text-muted-foreground">
-				<Calendar class="mr-2 size-4" />
+				<CalendarDays class="mr-2 size-4" />
 				<span>
-					Published: {formatDate(post.metadata.publishedAt)}
+					{formatDate(post.metadata.publishedAt)}
 				</span>
+				<span class="ml-2">- {post.metadata.readTime} min read</span>
 			</p>
 			<p class="text-sm text-muted-foreground">{post.metadata.summary}</p>
 		</div>
