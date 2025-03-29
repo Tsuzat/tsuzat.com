@@ -1,15 +1,9 @@
 <script lang="ts">
-	import type { Project } from '$lib/utils';
+	import { MYPROJECTS, type Project } from '$lib/utils';
 	import type { PageData } from './$types';
 	import ProjectView from '$lib/components/custom/project.svelte';
 
-	interface Props {
-		data: PageData;
-	}
-
-	let { data }: Props = $props();
-
-	const projects: Project[] = data.projects;
+	const projects: Project[] = MYPROJECTS;
 </script>
 
 <svelte:head>
