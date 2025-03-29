@@ -2,7 +2,7 @@
 	"name": "tsuzat.com",
 	"private": true,
 	"version": "0.0.1",
-	"type": "module",	
+	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
@@ -17,6 +17,7 @@
 	"devDependencies": {
 		"@eslint/compat": "^1.2.5",
 		"@sveltejs/adapter-auto": "^3.3.1",
+		"@sveltejs/adapter-vercel": "^5.6.3",
 		"@sveltejs/kit": "^2.15.2",
 		"@sveltejs/vite-plugin-svelte": "^4.0.4",
 		"@types/node": "^22.10.6",
