@@ -11,7 +11,8 @@
 	import PostOverview from '$lib/components/custom/post-overview.svelte';
 	import type { PageData } from './$types';
 	import Project from '$lib/components/custom/project.svelte';
-	import { MYPROJECTS } from '$lib/utils';
+	import { MYPROJECTS, MYSKILLS } from '$lib/utils';
+	import Skill from '$lib/components/custom/skill.svelte';
 
 	interface Props {
 		data: PageData;
@@ -109,6 +110,15 @@
 					<span class="hidden sm:block">X/Twitter</span>
 				</a>
 			</div>
+		</div>
+	</div>
+
+	<div id="posts" class="my-8 flex flex-col gap-4">
+		<div class="text-2xl font-bold">Currently Working With</div>
+		<div class="flex flex-wrap items-center justify-center gap-4">
+			{#each MYSKILLS as skill}
+				<Skill {skill} />
+			{/each}
 		</div>
 	</div>
 
