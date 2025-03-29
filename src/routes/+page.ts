@@ -8,8 +8,8 @@ export const load: PageLoad = async ({ fetch }) => {
 
 	let posts: MarkdownPostMetadataAndSlug[] = await response.json();
 
-	// Return top 3 posts as recents
-	if (posts.length > 3) posts = posts.slice(0, 3);
+	// Return top 2 posts as recents
+	if (posts.length > 2) posts = posts.slice(0, 2);
 
 	return {
 		posts
