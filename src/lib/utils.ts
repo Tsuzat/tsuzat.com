@@ -13,6 +13,10 @@ import Svelte from './components/icons/svelte.svelte';
 import Ts from './components/icons/ts.svelte';
 import Figma from './components/icons/figma.svelte';
 import Vercel from './components/icons/vercel.svelte';
+import Supabase from './components/icons/supabase.svelte';
+import Tauri from './components/icons/tauri.svelte';
+import Flutter from './components/icons/flutter.svelte';
+import Go from './components/icons/go.svelte';
 
 export type MarkdownPost = {
 	metadata: {
@@ -127,5 +131,9 @@ export const MYSKILLS: Skill[] = [
 	{ title: 'Svelte', description: 'Frontend framework', icon: Svelte, color: '#ff3e00' },
 	{ title: 'TypeScript', description: 'Statically typed JS', icon: Ts, color: '#3178c6' },
 	{ title: 'Figma', description: 'UI design tool', icon: Figma, color: '#0acf83' },
-	{ title: 'Vercel', description: 'Serverless hosting', icon: Vercel, color: '#808080' }
+	{ title: 'Vercel', description: 'Serverless hosting', icon: Vercel, color: '#808080' },
+	{ title: 'Supabase', description: 'Firebase alternative', icon: Supabase, color: '#287050' },
+	{ title: 'Tauri', description: 'Rust framework', icon: Tauri, color: '#ffc131' },
+	{ title: 'Flutter', description: 'App for any screen', icon: Flutter, color: '#41d0fd' },
+	{ title: 'Go', description: 'Modern days C', icon: Go, color: '#6ad7e5' }
 ];
