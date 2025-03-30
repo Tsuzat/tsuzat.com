@@ -123,7 +123,7 @@
 			</Button>
 		</div>
 		<div class="flex flex-wrap items-center justify-center gap-4">
-			{#each MYSKILLS as skill}
+			{#each MYSKILLS.slice(0, 6) as skill}
 				<Skill {skill} />
 			{/each}
 		</div>
