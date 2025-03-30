@@ -28,7 +28,7 @@
 
 <a href={project.url} target="_blank" title={project.name}>
 	<Card.Root
-		class="my-4 py-2 transition-all duration-500 hover:scale-[101%] hover:cursor-pointer sm:flex"
+		class="my-4 bg-muted/25 py-2 transition-all duration-500 hover:scale-[101%] hover:cursor-pointer hover:bg-muted/50 sm:flex"
 	>
 		<Card.Content>
 			<div id="content" class="*:py-1">
