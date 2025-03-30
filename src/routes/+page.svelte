@@ -3,7 +3,7 @@
 	import * as HoverCard from '$lib/components/ui/hover-card';
 	import profile from '$lib/assets/profile.webp';
 	import Accenture from '$lib/components/icons/accenture.svelte';
-	import { Calendar } from 'lucide-svelte';
+	import { CalendarDays } from 'lucide-svelte';
 	import Github from '$lib/components/icons/github.svelte';
 	import Linkedin from '$lib/components/icons/linkedin.svelte';
 	import Email from '$lib/components/icons/email.svelte';
@@ -13,6 +13,8 @@
 	import Project from '$lib/components/custom/project.svelte';
 	import { MYPROJECTS, MYSKILLS } from '$lib/utils';
 	import Skill from '$lib/components/custom/skill.svelte';
+	import Button from '$lib/components/ui/button/button.svelte';
+	import ArrowRight from '$lib/components/icons/moving/arrow-right.svelte';
 
 	interface Props {
 		data: PageData;
@@ -61,8 +63,8 @@
 									<h4 class="text-sm font-semibold">Accenture</h4>
 									<p class="text-sm">Let there be change</p>
 									<div class="flex items-center pt-2">
-										<Calendar class="mr-2 h-4 w-4 opacity-70" />
-										<span class="text-xs text-muted-foreground"> Joined August 2023 </span>
+										<CalendarDays class="mr-2 h-4 w-4 opacity-70" />
+										<span class="text-xs text-muted-foreground"> Joined on August 2023 </span>
 									</div>
 								</div>
 							</div>
@@ -114,7 +116,12 @@
 	</div>
 
 	<div id="posts" class="my-8 flex flex-col gap-4">
-		<div class="text-2xl font-bold">Currently Working With</div>
+		<div class="inline-flex items-center justify-center gap-2 text-center text-2xl font-bold">
+			Currently Working With
+			<Button variant="link" href="/about" class="p-0">
+				<ArrowRight classes="p-4" />
+			</Button>
+		</div>
 		<div class="flex flex-wrap items-center justify-center gap-4">
 			{#each MYSKILLS as skill}
 				<Skill {skill} />
@@ -123,12 +130,12 @@
 	</div>
 
 	<div id="posts" class="my-8">
-		<div class="mb-8 text-2xl font-bold">Recent Project</div>
+		<div class="mb-8 text-center text-2xl font-bold">Recent Project</div>
 		<Project project={MYPROJECTS[0]} />
 	</div>
 
 	<div id="posts" class="my-8">
-		<div class="mb-8 text-2xl font-bold">Recent Posts</div>
+		<div class="mb-8 text-center text-2xl font-bold">Recent Posts</div>
 		<div class="flex flex-col gap-4">
 			{#each posts as post}
 				<PostOverview {post} />
