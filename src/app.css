@@ -80,23 +80,12 @@
 @layer base {
 	* {
 		@apply border-border;
+		-ms-overflow-style: -ms-autohiding-scrollbar;
+		scrollbar-width: thin;
+		scrollbar-color: hsla(var(--muted-foreground) / 0.25) transparent;
 	}
 
 	body {
 		@apply bg-background text-foreground;
-	}
-	/* Only for Desktop */
-	@media (min-width: 640px) {
-		*::-webkit-scrollbar-track {
-			@apply rounded bg-transparent;
-		}
-
-		*::-webkit-scrollbar {
-			@apply size-2 bg-transparent;
-		}
-
-		*::-webkit-scrollbar-thumb {
-			@apply rounded bg-muted-foreground dark:bg-muted;
-		}
 	}
 }
