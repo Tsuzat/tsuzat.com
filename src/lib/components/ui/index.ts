@@ -1,13 +1,14 @@
-import Root from './avatar.svelte';
-import Image from './avatar-image.svelte';
-import Fallback from './avatar-fallback.svelte';
+import { LinkPreview as HoverCardPrimitive } from 'bits-ui';
+
+import Content from './hover-card-content.svelte';
+const Root = HoverCardPrimitive.Root;
+const Trigger = HoverCardPrimitive.Trigger;
 
 export {
 	Root,
-	Image,
-	Fallback,
-	//
-	Root as Avatar,
-	Image as AvatarImage,
-	Fallback as AvatarFallback
+	Content,
+	Trigger,
+	Root as HoverCard,
+	Content as HoverCardContent,
+	Trigger as HoverCardTrigger
 };
