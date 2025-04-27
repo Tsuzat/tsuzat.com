@@ -14,8 +14,9 @@
 </script>
 
 <Card.Root
-	class="hover:bg-muted dark:hover:bg-muted/20 bg-background w-full scale-100 border-0 p-0 shadow-none transition-all duration-500 hover:z-50 hover:scale-[102%] sm:w-1/2"
-	onclick={() => goto(href)}
+	class="hover:bg-muted dark:hover:bg-muted/20 bg-background w-full scale-100 cursor-pointer border-0 p-0 shadow-none transition-all duration-500 hover:z-50 hover:scale-[102%] sm:w-1/2"
+	onclick={() => window.open(href, '_blank')}
+	title={href}
 >
 	<Card.Content class="flex flex-col gap-2 p-4">
 		<img src={img} alt={title} class="h-56 w-full rounded-lg object-cover" />
