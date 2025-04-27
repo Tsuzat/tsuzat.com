@@ -1,7 +1,11 @@
 <script lang="ts">
+	import Card from '$lib/components/custom/Card.svelte';
 	import TextGrow from '$lib/components/custom/TextGrow.svelte';
 	import TextHoverCard from '$lib/components/custom/TextHoverCard.svelte';
 	import Icons from '$lib/components/icons';
+
+	import neosolarized from '$lib/static/neosolazied.png';
+	import edra from '$lib/static/edra.png';
 </script>
 
 <svelte:head>
@@ -50,7 +54,7 @@
 					<div>NeoSolarized.nvim</div>
 				</div>
 				<div class="text-muted-foreground text-sm text-wrap">
-					<span>Best Rich Text Editor, made for Svelte Developers with Tiptap </span>
+					<span>NeoSolarized colorscheme for NeoVim with full transparency </span>
 				</div>
 			</TextHoverCard>Passionate about building and learning, I am currently working on
 			<strong>Smart Bug Triage solutions using GenAI</strong>
@@ -72,7 +76,21 @@
 		{@render SocialLink('https://www.linkedin.com/in/tsuzat/', 'LinkedIn')}
 		{@render SocialLink('mailto:contact@tsuzat.com', 'Email')}
 	</div>
-	<div class="animate-load-top fill-mode-both text-muted-foreground mt-8 delay-1000">
-		<span>Pinned</span>
+	<div class="animate-load-top fill-mode-both mt-8 delay-1000">
+		<span class="text-muted-foreground font-semibold">Pinned</span>
+		<div class="mt-4 flex flex-col flex-wrap items-center justify-between sm:flex-row">
+			<Card
+				href="https://github.com/Tsuzat/NeoSolarized.nvim"
+				img={neosolarized}
+				title="NeoSolarized.nvim"
+				description="NeoSolarized colorscheme for NeoVim with full transparency"
+			/>
+			<Card
+				href="https://edra.tsuzat.com/"
+				img={edra}
+				title="Edra"
+				description="Best Rich Text Editor, made for Svelte Developers with Tiptap"
+			/>
+		</div>
 	</div>
 </div>
