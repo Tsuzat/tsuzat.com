@@ -9,9 +9,9 @@
 </svelte:head>
 
 <div>
-	<div class="my-8">
+	<div class="mt-16 mb-8">
 		<TextGrow class="my-4 text-3xl font-bold" text="Namaste, Tsuzat here!" />
-		<p class="text-justify">
+		<p class="animate-top text-justify">
 			Hi, I'm Alok "Tsuzat" Singh — a software developer
 			<TextHoverCard href="https://www.accenture.com/" text="@accenture" classText="underline">
 				<div class="flex items-center gap-2">
@@ -24,9 +24,7 @@
 					<Icons.calendar class="size-4" />
 					<span>Aug 2023</span>
 				</div>
-			</TextHoverCard>, based in Hyderabad, India.
-			<br />
-			I'm the creator of
+			</TextHoverCard>, based in Hyderabad, India. I'm the creator of
 			<TextHoverCard
 				href="https://edra.tsuzat.com/"
 				text="Edra"
@@ -54,9 +52,47 @@
 				<div class="text-muted-foreground text-sm text-wrap">
 					<span>Best Rich Text Editor, made for Svelte Developers with Tiptap </span>
 				</div>
-			</TextHoverCard>
-			NeoSolarized.nvim. Passionate about building and learning, I am currently working on Smart Bug
-			Triage solutions using GenAI within my organization.
+			</TextHoverCard>Passionate about building and learning, I am currently working on
+			<strong>Smart Bug Triage solutions using GenAI</strong>
+			within my organization.
 		</p>
 	</div>
+	<div class="animate-top flex flex-wrap items-center gap-4">
+		{#snippet SocialLink(href: string, text: string)}
+			<a
+				{href}
+				class="bg-muted/50 hover:bg-muted inline-flex items-center gap-2 rounded-full px-4 py-1 transition-all duration-500"
+				target="_blank"
+			>
+				<span>{text}</span>
+				<Icons.arrowUpRight class="text-muted-foreground size-4" />
+			</a>
+		{/snippet}
+		{@render SocialLink('https://github.com/Tsuzat', 'Github')}
+		{@render SocialLink('https://www.linkedin.com/in/tsuzat/', 'LinkedIn')}
+		{@render SocialLink('mailto:contact@tsuzat.com', 'Email')}
+	</div>
+	<div class="animate-top text-muted-foreground mt-8">
+		<span>Pinned</span>
+	</div>
 </div>
+
+<style>
+	.animate-top {
+		animation: animate-top 0.7s ease-in;
+		animation-delay: 0.5s;
+		animation-fill-mode: both;
+	}
+
+	@keyframes animate-top {
+		0% {
+			opacity: 0;
+			transform: translateY(-20%);
+		}
+
+		100% {
+			opacity: 100%;
+			transform: translateY(0%);
+		}
+	}
+</style>
