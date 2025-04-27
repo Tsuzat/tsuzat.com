@@ -2,12 +2,12 @@
 	import { page } from '$app/state';
 	import { cn } from '$lib/utils';
 	import { scale } from 'svelte/transition';
-	import ThemeToggler from './ThemeToggler.svelte';
 	import LottieRender from './LottieRender.svelte';
 	import animationData from '$lib/static/logo.json';
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
-	import Icons from './icons';
 	import { goto } from '$app/navigation';
+	import Icons from '../icons';
+	import ThemeToggler from './ThemeToggler.svelte';
 
 	const links = ['about', 'blogs', 'projects'];
 </script>
@@ -21,7 +21,6 @@
 		{#each links as link, idx (idx)}
 			{@const isActive = page.url.pathname.startsWith(`/${link}`)}
 			<a
-				data-active={isActive}
 				href={`/${link}`}
 				class={cn(
 					'group relative z-0 hidden rounded-md px-2 py-1 capitalize sm:block',
@@ -42,7 +41,7 @@
 				<Icons.plus class="size-4" />
 				<span>Links</span>
 			</DropdownMenu.Trigger>
-			<DropdownMenu.Content portalProps={{ children: undefined, disabled: true }} class="sm:hidden">
+			<DropdownMenu.Content class="sm:hidden">
 				{#each links as link, idx (idx)}
 					<DropdownMenu.Item onclick={() => goto(`/${link}`)} class="capitalize">
 						{link}

@@ -12,7 +12,7 @@
 </script>
 
 <div class="inline-block tracking-[-3.8px] whitespace-pre">
-	{#each text.split('') as item, index}
+	{#each text.split('') as item, index (index)}
 		<Motion
 			initial={{ opacity: 0, filter: 'blur(4px)', rotateX: 90, y: 5 }}
 			transition={{
