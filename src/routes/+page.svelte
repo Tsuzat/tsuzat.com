@@ -11,7 +11,7 @@
 <div>
 	<div class="mt-16 mb-8">
 		<TextGrow class="my-4 text-3xl font-bold" text="Namaste, Tsuzat here!" />
-		<p class="animate-top text-justify">
+		<p class="animate-load-top fill-mode-both text-justify delay-300">
 			Hi, I'm Alok "Tsuzat" Singh — a software developer
 			<TextHoverCard href="https://www.accenture.com/" text="@accenture" classText="underline">
 				<div class="flex items-center gap-2">
@@ -57,7 +57,7 @@
 			within my organization.
 		</p>
 	</div>
-	<div class="animate-top flex flex-wrap items-center gap-4">
+	<div class="animate-load-top fill-mode-both flex flex-wrap items-center gap-4 delay-700">
 		{#snippet SocialLink(href: string, text: string)}
 			<a
 				{href}
@@ -72,27 +72,7 @@
 		{@render SocialLink('https://www.linkedin.com/in/tsuzat/', 'LinkedIn')}
 		{@render SocialLink('mailto:contact@tsuzat.com', 'Email')}
 	</div>
-	<div class="animate-top text-muted-foreground mt-8">
+	<div class="animate-load-top fill-mode-both text-muted-foreground mt-8 delay-1000">
 		<span>Pinned</span>
 	</div>
 </div>
-
-<style>
-	.animate-top {
-		animation: animate-top 0.7s ease-in;
-		animation-delay: 0.5s;
-		animation-fill-mode: both;
-	}
-
-	@keyframes animate-top {
-		0% {
-			opacity: 0;
-			transform: translateY(-20%);
-		}
-
-		100% {
-			opacity: 100%;
-			transform: translateY(0%);
-		}
-	}
-</style>
