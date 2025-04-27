@@ -14,7 +14,7 @@
 
 <div>
 	<div class="mt-16 mb-8">
-		<TextGrow class="my-4 text-3xl font-bold" text="Namaste, Tsuzat here!" />
+		<TextGrow class="my-4 text-3xl font-bold" text="Namaste, Tsuzat here!" duration={0.5} />
 		<p class="animate-load-top fill-mode-both text-justify delay-300">
 			Hi, I'm Alok "Tsuzat" Singh — a software developer
 			<TextHoverCard href="https://www.accenture.com/" text="@accenture" classText="underline">
@@ -77,7 +77,7 @@
 		{@render SocialLink('mailto:contact@tsuzat.com', 'Email')}
 	</div>
 	<div class="animate-load-top fill-mode-both mt-8 delay-1000">
-		<span class="text-muted-foreground font-semibold">Pinned</span>
+		<span class="text-muted-foreground font-semibold">Projects</span>
 		<div class="mt-4 flex flex-col flex-wrap items-center justify-between sm:flex-row">
 			<Card
 				href="https://github.com/Tsuzat/NeoSolarized.nvim"
