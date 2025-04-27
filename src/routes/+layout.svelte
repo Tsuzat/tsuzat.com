@@ -2,7 +2,7 @@
 	import { ModeWatcher } from 'mode-watcher';
 	import '@fontsource-variable/open-sans';
 	import '../app.css';
-	import Navbar from '$lib/components/Navbar.svelte';
+	import Navbar from '$lib/components/custom/Navbar.svelte';
 
 	let { children } = $props();
 </script>

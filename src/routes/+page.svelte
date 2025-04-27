@@ -1,5 +1,5 @@
 <script lang="ts">
-	import TextGrow from '$lib/components/TextGrow.svelte';
+	import TextGrow from '$lib/components/custom/TextGrow.svelte';
 </script>
 
 <svelte:head>
@@ -7,7 +7,7 @@
 </svelte:head>
 
 <div>
-	<div class="mt-16">
+	<div class="my-8">
 		<TextGrow class="my-4 text-3xl font-bold" text="Namaste, Tsuzat here!" />
 		<p class="text-justify">
 			Hi, I'm Alok "Tsuzat" Singh — a software developer at Accenture, based in Hyderabad, India.
