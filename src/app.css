@@ -111,6 +111,19 @@
 	--animate-accordion-up: accordion-up 0.2s ease-out;
 	--animate-caret-blink: caret-blink 1.25s ease-out infinite;
 
+	--animate-load-top: animate-load-top 0.75s ease-in;
+
+	@keyframes animate-load-top {
+		from {
+			opacity: 0;
+			transform: translateY(2rem);
+		}
+		to {
+			opacity: 100%;
+			transform: translateY(0%);
+		}
+	}
+
 	@keyframes accordion-down {
 		from {
 			height: 0;
