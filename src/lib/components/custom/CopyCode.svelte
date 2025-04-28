@@ -17,8 +17,8 @@
 
 <button class="h-fit p-0 hover:bg-transparent" onclick={copyCode} bind:this={CopyCodeElement}>
 	{#if isClicked}
-		<span class="text-xs text-green-500">Copied</span>
+		<span class="text-green-500">Copied</span>
 	{:else}
-		<span class="text-xs">Copy</span>
+		<span>Copy</span>
 	{/if}
 </button>
