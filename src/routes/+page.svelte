@@ -6,6 +6,8 @@
 
 	import neosolarized from '$lib/assets/static/neosolazied.png';
 	import edra from '$lib/assets/static/edra.png';
+
+	const { data } = $props();
 </script>
 
 <svelte:head>
@@ -94,5 +96,14 @@
 				description="Best Rich Text Editor, made for Svelte Developers with Tiptap"
 			/>
 		</div>
+	</div>
+	<div class="animate-load-top fill-mode-both my-4 flex flex-col gap-4 delay-1000">
+		<span class="text-muted-foreground font-semibold">Projects</span>
+		{#each data.posts as post}
+			<a href={`/blogs/${post.slug}`} class="flex items-center gap-2">
+				<span>{post.metadata.title}</span>
+				<span>{post.metadata.publishedAt}</span>
+			</a>
+		{/each}
 	</div>
 </div>
