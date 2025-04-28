@@ -12,7 +12,6 @@
 	}
 
 	let { data }: Props = $props();
-
 	onMount(async () => {
 		// Find the code tags
 		const codeTags = document.querySelectorAll('code');
@@ -97,5 +96,6 @@
 
 	<hr />
 
-	<Comment />
+	<h2 class="my-4 text-xl font-bold">Comments</h2>
+	<Comment onSubmit={() => {}} />
 </div>
