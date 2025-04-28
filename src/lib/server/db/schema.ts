@@ -6,17 +6,15 @@ export const blogs = pgTable('blogs', {
 	views: integer('views')
 });
 
-export const upvotes = pgTable('blogs_upvotes', {
-	id: uuid('id').primaryKey().defaultRandom(),
-	blogId: uuid('blog_id').references(() => blogs.id),
-	userId: text('user_id').references(() => user.id)
-});
-
 export const comments = pgTable('comments', {
 	id: uuid('id').primaryKey().defaultRandom(),
-	blogId: uuid('blog_id').references(() => blogs.id),
-	content: text('content'),
-	userId: text('user_id').references(() => user.id),
+	blogId: uuid('blog_id')
+		.references(() => blogs.id)
+		.notNull(),
+	content: text('content').notNull(),
+	userId: text('user_id')
+		.references(() => user.id)
+		.notNull(),
 	createdAt: timestamp('created_at', { withTimezone: true, mode: 'date' }).notNull().defaultNow(),
 	updatedAt: timestamp('updated_at', { withTimezone: true, mode: 'date' }).notNull().defaultNow()
 });
@@ -50,5 +48,3 @@ export type Blog = typeof blogs.$inferSelect;
 export type Comment = typeof comments.$inferSelect;
 
 export type Like = typeof likes.$inferSelect;
-
-export type Upvote = typeof upvotes.$inferSelect;
