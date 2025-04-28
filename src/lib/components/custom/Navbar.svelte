@@ -28,7 +28,10 @@
 				)}
 			>
 				{#if isActive}
-					<div transition:scale class="bg-muted absolute inset-0 -z-10 rounded-lg"></div>
+					<div
+						transition:scale
+						class="dark:bg-muted bg-muted-foreground/20 absolute inset-0 -z-10 rounded-lg"
+					></div>
 				{/if}
 				{link}
 			</a>
