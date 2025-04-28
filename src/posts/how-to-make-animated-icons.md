@@ -20,8 +20,8 @@ production: true
 
 - [Introduction](#introduction)
 - [The Coding Part](#the-coding-part)
-	- [HTML, CSS and JavaScript Approach](#html-css-and-javascript-approach)
-	- [Using Svelte](#using-svelte)
+  - [HTML, CSS and JavaScript Approach](#html-css-and-javascript-approach)
+  - [Using Svelte](#using-svelte)
 - [Conclusion](#conclusion)
 <!--toc:end-->
 
