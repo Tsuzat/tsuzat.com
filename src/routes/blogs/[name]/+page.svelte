@@ -6,12 +6,27 @@
 	import CodeInjector from '$lib/components/custom/CodeInjector.svelte';
 	import Icons from '$lib/components/icons';
 	import Comment from '$lib/components/custom/Comment.svelte';
+	import { Views } from './views.svelte';
+	import { Button } from '$lib/components/ui/button';
+	import { Avatar } from '$lib/components/ui/avatar';
+	import Comments from './comments.svelte';
 
 	interface Props {
 		data: PageData;
 	}
 
 	let { data }: Props = $props();
+	const views = new Views();
+	const comments = new Comments();
+
+	$effect(() => {
+		console.log(data.metadata.id);
+		views.fetchViews(data.metadata.id).then(() => {
+			views.updateViews(data.metadata.id);
+		});
+		comments.fetchComments(data.metadata.id);
+	});
+
 	onMount(async () => {
 		// Find the code tags
 		const codeTags = document.querySelectorAll('code');
@@ -71,7 +86,7 @@
 
 <div class="animate-load-top fill-mode-both mt-12 mb-8 w-full delay-500">
 	<h1 class="text-3xl font-bold">{data.metadata.title}</h1>
-	<p class="text-muted-foreground my-2 flex items-center gap-8">
+	<p class="text-muted-foreground my-2 flex flex-wrap items-center gap-4">
 		<span class="flex items-center gap-2">
 			<Icons.calendar class="size-4" />
 			<span>
@@ -82,6 +97,12 @@
 			<Icons.clock class="size-4" />
 			<span>
 				{data.metadata.readTime} mins
+			</span>
+		</span>
+		<span class="flex items-center gap-2">
+			<Icons.eye class="size-4" />
+			<span>
+				{views.getViews()} views
 			</span>
 		</span>
 	</p>
@@ -97,5 +118,23 @@
 	<hr />
 
 	<h2 class="my-4 text-xl font-bold">Comments</h2>
-	<Comment onSubmit={() => {}} />
+	{#if data.user}
+		{@const userId = data.user.id}
+		<Comment
+			user={data.user}
+			onSubmit={async (content) => {
+				await comments.addComment(content, data.metadata.id, userId);
+			}}
+		/>
+	{:else}
+		<Button variant="secondary" href="/login/github">
+			<Icons.github />
+			Sign In with Github to Comment
+		</Button>
+	{/if}
+	<div class="flex flex-col gap-4">
+		{#each comments.getComments() as comment}
+			{@html comment.content}
+		{/each}
+	</div>
 </div>
