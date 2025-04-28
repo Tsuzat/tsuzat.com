@@ -39,6 +39,10 @@ blockquote {
 	border-radius: 0.5rem;
 }
 
+blockquote p {
+	padding: 0.5rem 0.25rem;
+}
+
 /* Line-number grid in code blocks */
 pre.shiki code {
 	display: grid;
@@ -83,4 +87,8 @@ pre.shiki code span.diff-remove::before {
 pre.shiki code span.diff-remove {
 	border-left: 3px solid rgba(248, 113, 113, 0.8);
 	background-color: rgba(248, 113, 113, 0.15);
+}
+
+details {
+	cursor: pointer;
 }

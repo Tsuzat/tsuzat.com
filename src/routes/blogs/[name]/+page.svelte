@@ -5,6 +5,7 @@
 	import './+page.css';
 	import CodeInjector from '$lib/components/custom/CodeInjector.svelte';
 	import Icons from '$lib/components/icons';
+	import Comment from '$lib/components/custom/Comment.svelte';
 
 	interface Props {
 		data: PageData;
@@ -69,7 +70,7 @@
 	<meta name="twitter:card" content="summary_large_image" />
 </svelte:head>
 
-<div class="animate-load-top mt-12 mb-8 w-full">
+<div class="animate-load-top fill-mode-both mt-12 mb-8 w-full delay-500">
 	<h1 class="text-3xl font-bold">{data.metadata.title}</h1>
 	<p class="text-muted-foreground my-2 flex items-center gap-8">
 		<span class="flex items-center gap-2">
@@ -85,12 +86,16 @@
 			</span>
 		</span>
 	</p>
-	<p class="text-muted-foreground my-4 text-sm">{data.metadata.summary}</p>
+	<p class="text-muted-foreground my-4">{data.metadata.summary}</p>
 	<hr />
 
-	<div class="post prose dark:prose-invert prose-a:to-blue-600 my-4 min-w-full">
+	<div class="post prose dark:prose-invert my-4 min-w-full">
 		<CodeInjector>
 			<data.post />
 		</CodeInjector>
 	</div>
+
+	<hr />
+
+	<Comment />
 </div>

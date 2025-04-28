@@ -11,16 +11,21 @@ production: true
   import fastfetch from '$lib/assets/posts/setup-a-powerful-terminal/fastfetch.png'
 </script>
 
+<details open>
+  <summary>Table of Content</summary>
+
 - [Introduction](#introduction)
 - [Installation](#installation)
   - [Nerd Font](#nerd-font)
   - [Fish Shell](#fish-shell)
-  - [Installing `eza`](#installing-eza)
-  - [Installing `starship`](#installing-starship)
+  - [Installing eza](#installing-eza)
+  - [Installing starship](#installing-starship)
   - [A Terminal](#a-terminal)
     - [Installing and Setting Up Ghostty](#installing-and-setting-up-ghostty)
   - [Bonus](#bonus)
   - [Conclusion](#conclusion)
+
+</details>
 
 # Introduction
 
@@ -178,7 +183,7 @@ if status --is-interactive
 end
 ```
 
-## Installing `eza`
+## Installing eza
 
 eza is a command line tool that provides a better way to list files and directories.
 You can find the github repo [here](https://github.com/eza-community/eza). Please follow the installation guide.
@@ -189,7 +194,7 @@ Since, I'm using **MacOS**, I'll be installing it via `brew`
 brew install eza
 ```
 
-## Installing `starship`
+## Installing starship
 
 Starship is a prompt for your terminal. It provides a better way to display your shell's information.
 You can find thier official website [here](https://starship.rs/). You can follow the installation guide [here](https://starship.rs/guide/#%F0%9F%9A%80-installation).
