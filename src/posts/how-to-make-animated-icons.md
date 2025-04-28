@@ -1,4 +1,5 @@
 ---
+id: '892f991b-2478-4bf5-a958-f0ac16f51667'
 title: 'Render Lottie animated icons in web'
 publishedAt: '2024-04-10'
 imgUrl: '/posts/how-to-make-animated-icons/poster.gif'
@@ -19,8 +20,8 @@ production: true
 
 - [Introduction](#introduction)
 - [The Coding Part](#the-coding-part)
-  - [HTML, CSS and JavaScript Approach](#html-css-and-javascript-approach)
-  - [Using Svelte](#using-svelte)
+	- [HTML, CSS and JavaScript Approach](#html-css-and-javascript-approach)
+	- [Using Svelte](#using-svelte)
 - [Conclusion](#conclusion)
 <!--toc:end-->
 
