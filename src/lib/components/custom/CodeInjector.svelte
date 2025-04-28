@@ -21,7 +21,7 @@
 
 			const divTopBar = document.createElement('div');
 			divTopBar.className =
-				'flex items-center justify-between px-4 rounded-t-md border-b border-muted-foreground/[10%] bg-muted/[25%] px-2.5 py-1 font-mono text-xs text-muted-foreground/75';
+				'flex items-center justify-between p-2 rounded-t-md border-b border-muted-foreground/[10%] bg-muted/[25%] px-2.5 py-1 text-muted-foreground/75';
 
 			// Add one div with class "file name" and content as "filename.ext"
 			const fileNameDiv = document.createElement('div');
