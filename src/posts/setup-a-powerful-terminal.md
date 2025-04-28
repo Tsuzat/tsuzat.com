@@ -1,4 +1,5 @@
 ---
+id: '4a1f2837-c0e2-465a-9510-6a2c02c6da76'
 title: 'Setup a powerful terminal'
 publishedAt: '2025-04-22'
 imgUrl: '/posts/how-to-setup-windows/poster.webp'
