@@ -8,8 +8,6 @@ export const load: PageLoad = async ({ params }) => {
 
 	const markDownPost: MarkdownPost = await import(`../../../posts/${slug}.md`);
 
-	console.log('Got the data', markDownPost.metadata);
-
 	return {
 		metadata: markDownPost.metadata,
 		post: markDownPost.default
