@@ -1,20 +1,29 @@
-import { pgTable, serial, text, integer, timestamp } from 'drizzle-orm/pg-core';
+import { pgTable, serial, text, integer, timestamp, uuid } from 'drizzle-orm/pg-core';
 
 export const blogs = pgTable('blogs', {
-	id: serial('id').primaryKey(),
+	id: uuid('id').primaryKey().defaultRandom(),
 	title: text('title'),
-	counts: integer('counts')
+	views: integer('views')
+});
+
+export const upvotes = pgTable('blogs_upvotes', {
+	id: uuid('id').primaryKey().defaultRandom(),
+	blogId: uuid('blog_id').references(() => blogs.id),
+	userId: text('user_id').references(() => user.id)
 });
 
 export const comments = pgTable('comments', {
-	id: serial('id').primaryKey(),
-	blogId: integer('blog_id').references(() => blogs.id),
-	content: text('content')
+	id: uuid('id').primaryKey().defaultRandom(),
+	blogId: uuid('blog_id').references(() => blogs.id),
+	content: text('content'),
+	userId: text('user_id').references(() => user.id),
+	createdAt: timestamp('created_at', { withTimezone: true, mode: 'date' }).notNull().defaultNow(),
+	updatedAt: timestamp('updated_at', { withTimezone: true, mode: 'date' }).notNull().defaultNow()
 });
 
-export const likes = pgTable('likes', {
+export const likes = pgTable('comments_likes', {
 	id: serial('id').primaryKey(),
-	blogId: integer('blog_id').references(() => blogs.id),
+	commentId: uuid('comment_id').references(() => comments.id),
 	userId: text('user_id').references(() => user.id)
 });
 
@@ -35,3 +44,11 @@ export const session = pgTable('session', {
 export type Session = typeof session.$inferSelect;
 
 export type User = typeof user.$inferSelect;
+
+export type Blog = typeof blogs.$inferSelect;
+
+export type Comment = typeof comments.$inferSelect;
+
+export type Like = typeof likes.$inferSelect;
+
+export type Upvote = typeof upvotes.$inferSelect;
