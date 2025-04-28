@@ -76,6 +76,7 @@
 		{@render SocialLink('https://www.linkedin.com/in/tsuzat/', 'LinkedIn')}
 		{@render SocialLink('mailto:contact@tsuzat.com', 'Email')}
 		{@render SocialLink('https://bsky.app/profile/tsuzat.com', 'Bluesky')}
+		{@render SocialLink('https://x.com/TheTsuzat', 'X.com')}
 	</div>
 	<div class="animate-load-top fill-mode-both mt-8 delay-1000">
 		<span class="text-muted-foreground font-semibold">Projects</span>
