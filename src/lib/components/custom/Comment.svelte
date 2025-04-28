@@ -4,11 +4,14 @@
 	import { Button } from '../ui/button';
 	import Icons from '../icons';
 	import type { Editor } from '@tiptap/core';
+	import * as Avatar from '../ui/avatar';
+	import type { User } from '$lib/server/db/schema';
 
 	interface Props {
+		user: User;
 		onSubmit(content: string): void;
 	}
-	const { onSubmit }: Props = $props();
+	const { user, onSubmit }: Props = $props();
 
 	let content = $state<string>('');
 	let editor = $state<Editor>();
@@ -17,12 +20,33 @@
 	function onUpdate(props: { editor: Editor; transaction: Transaction }) {
 		content = props.editor.getHTML();
 	}
+
+	function handleKeyDown(event: KeyboardEvent) {
+		if (event.key === 'Enter' && (event.metaKey || event.ctrlKey)) {
+			event.preventDefault();
+			if (!content || content.trim() === '') return;
+			onSubmit(content);
+		}
+	}
 </script>
 
+<svelte:document onkeydown={handleKeyDown} />
+
+<div class="my-4 flex items-center justify-between">
+	<div class="inline-flex items-center gap-2">
+		<Avatar.Root class="size-8">
+			<Avatar.Image src={user.avatarUrl} alt={user.username} />
+			<Avatar.Fallback>{user.username.charAt(0)}</Avatar.Fallback>
+		</Avatar.Root>
+		<span>{user.username}</span>
+	</div>
+	<Button variant="outline" size="icon" title="Sign out">
+		<Icons.logOut />
+	</Button>
+</div>
 <div class="flex max-h-40 w-full items-end gap-1 overflow-hidden rounded-lg border p-2">
 	<Edra bind:editor {content} limit={MAX_LIMIT} class="max-h-40 w-full overflow-auto" {onUpdate} />
 	<Button
-		variant="outline"
 		size="icon"
 		disabled={!content || content.trim() === ''}
 		onclick={() => onSubmit(content)}
