@@ -1,4 +1,4 @@
-import { MoonStar, Sun, Plus, CalendarDays, ArrowUpRight, Clock } from '@lucide/svelte';
+import { MoonStar, Sun, Plus, CalendarDays, ArrowUpRight, Clock, Send } from '@lucide/svelte';
 import Accenture from './Accenture.svelte';
 import Neovim from './Neovim.svelte';
 import Github from './Github.svelte';
@@ -11,6 +11,7 @@ const Icons = {
 	plus: Plus,
 	calendar: CalendarDays,
 	clock: Clock,
+	send: Send,
 	arrowUpRight: ArrowUpRight,
 	accenture: Accenture,
 	neovim: Neovim,
