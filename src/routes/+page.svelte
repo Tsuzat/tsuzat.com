@@ -4,8 +4,8 @@
 	import TextHoverCard from '$lib/components/custom/TextHoverCard.svelte';
 	import Icons from '$lib/components/icons';
 
-	import neosolarized from '$lib/static/neosolazied.png';
-	import edra from '$lib/static/edra.png';
+	import neosolarized from '$lib/assets/static/neosolazied.png';
+	import edra from '$lib/assets/static/edra.png';
 </script>
 
 <svelte:head>

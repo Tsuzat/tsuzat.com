@@ -3,7 +3,7 @@
 	import { cn } from '$lib/utils';
 	import { scale } from 'svelte/transition';
 	import LottieRender from './LottieRender.svelte';
-	import animationData from '$lib/static/logo.json';
+	import animationData from '$lib/assets/static/logo.json';
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
 	import { goto } from '$app/navigation';
 	import Icons from '../icons';
