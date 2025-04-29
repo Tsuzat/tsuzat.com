@@ -10,10 +10,16 @@
 
 <TextGrow text="Projects" duration={0.5} class="mt-12 text-2xl font-bold" />
 
-<div class="animate-load-top fill-mode-both mt-4 flex items-center justify-between delay-500">
+<div
+	class="animate-load-top fill-mode-both my-4 flex flex-col flex-wrap items-center justify-between delay-500 sm:flex-row"
+>
 	{#each projects as project}
 		<Card {project} />
 	{/each}
 </div>
 
-<p class="mt-8">Expore More...</p>
+<a
+	class="animate-load-top fill-mode-both mt-8 font-bold underline delay-500"
+	href="https://github.com/Tsuzat"
+	target="_blank">Expore More...</a
+>
