@@ -8,8 +8,8 @@
 	import Comment from '$lib/components/custom/Comment.svelte';
 	import { Views } from './views.svelte';
 	import { Button } from '$lib/components/ui/button';
-	import { Avatar } from '$lib/components/ui/avatar';
 	import Comments from './comments.svelte';
+	import RenderComment from '$lib/components/custom/RenderComment.svelte';
 
 	interface Props {
 		data: PageData;
@@ -132,9 +132,9 @@
 			Sign In with Github to Comment
 		</Button>
 	{/if}
-	<div class="flex flex-col gap-4">
+	<div class="my-4 flex flex-col gap-4">
 		{#each comments.getComments() as comment}
-			{@html comment.content}
+			<RenderComment {comment} onEdit={() => comments.editComment(comment)} />
 		{/each}
 	</div>
 </div>
