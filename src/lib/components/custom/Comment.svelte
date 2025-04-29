@@ -6,6 +6,7 @@
 	import type { Editor } from '@tiptap/core';
 	import * as Avatar from '../ui/avatar';
 	import type { User } from '$lib/server/db/schema';
+	import { PUBLIC_MAX_LIMIT } from '$env/static/public';
 
 	interface Props {
 		user: User;
@@ -15,7 +16,7 @@
 
 	let content = $state<string>('');
 	let editor = $state<Editor>();
-	const MAX_LIMIT = 256;
+	const max_limit = parseInt(PUBLIC_MAX_LIMIT);
 	const characters = $derived.by(
 		() => (editor ? editor.storage.characterCount.characters() : 0) as number
 	);
@@ -29,6 +30,7 @@
 			event.preventDefault();
 			if (!content || content.trim() === '') return;
 			onSubmit(content.trim());
+			editor?.commands.setContent('');
 		}
 	}
 </script>
@@ -50,21 +52,24 @@
 	</form>
 </div>
 <div class="flex max-h-40 w-full items-end gap-1 overflow-hidden rounded-lg border p-2">
-	<Edra bind:editor {content} limit={MAX_LIMIT} class="max-h-40 w-full overflow-auto" {onUpdate} />
+	<Edra {content} bind:editor limit={max_limit} class="max-h-40 w-full overflow-auto" {onUpdate} />
 	<Button
 		size="icon"
 		disabled={!content ||
 			content.trim() === '' ||
-			characters > MAX_LIMIT ||
+			characters > max_limit ||
 			characters < 1 ||
 			editor?.storage.characterCount.words() < 1}
-		onclick={() => onSubmit(content.trim())}
+		onclick={() => {
+			onSubmit(content.trim());
+			editor?.commands.setContent('');
+		}}
 	>
 		<Icons.send />
 	</Button>
 </div>
 {#if editor}
 	<p class="text-muted-foreground text-end text-sm">
-		{editor.storage.characterCount.characters()} / {MAX_LIMIT}
+		{editor.storage.characterCount.characters()} / {max_limit}
 	</p>
 {/if}

@@ -10,7 +10,7 @@
 	import type { Editor } from '@tiptap/core';
 	import { Transaction } from '@tiptap/pm/state';
 	import { Button } from '../ui/button';
-	import { timeAgo } from '$lib/utils';
+	import { PUBLIC_MAX_LIMIT } from '$env/static/public';
 
 	interface Props {
 		cUser: User | null;
@@ -23,6 +23,8 @@
 	let user = $state<User>();
 	let isEditing = $state<boolean>(false);
 	let editor = $state<Editor>();
+
+	const max_limit = parseInt(PUBLIC_MAX_LIMIT);
 
 	$effect(() => {
 		editor?.setEditable(isEditing);
@@ -57,11 +59,6 @@
 				<a class="font-bold underline" target="_blank" href="https://github.com/{user.username}"
 					>{user.username}</a
 				>
-				·
-				<span class="text-muted-foreground text-sm">{timeAgo(new Date(comment.updatedAt))}</span>
-				{#if comment.updatedAt !== comment.createdAt}
-					· <span class="text-muted-foreground text-sm">Edited</span>
-				{/if}
 				{#if cUser && cUser.id === comment.userId && cUser.id === user.id}
 					{#if !isEditing}
 						<Button
@@ -99,6 +96,7 @@
 			<Edra
 				content={comment.content}
 				editable={false}
+				limit={max_limit}
 				bind:editor
 				{onUpdate}
 				class="max-h-60 w-full overflow-auto"
@@ -110,6 +108,6 @@
 </div>
 {#if isEditing && editor}
 	<span class="text-muted-foreground text-end text-sm">
-		{editor.storage.characterCount.characters()} / 256
+		{editor.storage.characterCount.characters()} / {max_limit}
 	</span>
 {/if}
