@@ -60,3 +60,49 @@ export const projects: Project[] = [
 		}
 	}
 ];
+
+export interface Skill {
+	name: string;
+	href: string;
+	description: string;
+	icon: string;
+}
+
+export const skills: Skill[] = [
+	{
+		name: 'SvelteKit',
+		href: 'https://svelte.dev/',
+		description: 'Full stack framework',
+		icon: 'devicon:svelte'
+	},
+	{
+		name: 'Tailwind CSS',
+		href: 'https://tailwindcss.com/',
+		description: 'A utility-first CSS framework',
+		icon: 'devicon:tailwindcss'
+	},
+	{
+		name: 'TypeScript',
+		href: 'https://www.typescriptlang.org/',
+		description: 'JS with fake types',
+		icon: 'devicon:typescript'
+	},
+	{
+		name: 'Neovim',
+		href: 'https://neovim.io/',
+		description: 'Hyperextensible Vim-based text editor',
+		icon: 'devicon:neovim'
+	},
+	{
+		name: 'Appwrite',
+		href: 'https://appwrite.io/',
+		description: 'Build like a team of hundreds',
+		icon: 'devicon:appwrite'
+	},
+	{
+		name: 'Git',
+		href: 'https://git-scm.com/',
+		description: 'Best version control system',
+		icon: 'devicon:git'
+	}
+];
