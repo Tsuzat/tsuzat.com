@@ -23,6 +23,6 @@ export const actions: Actions = {
 		}
 		await invalidateSession(event.locals.session.id);
 		deleteSessionTokenCookie(event);
-		redirect(309, '/');
+		redirect(302, '/');
 	}
 };
