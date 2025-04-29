@@ -17,7 +17,7 @@
 			let preTagParent = tag.parentNode;
 			const div = document.createElement('div');
 			div.className =
-				'!border-1 dark:border-border border-muted-foreground/10 rounded overflow-hidden';
+				'!border-1 my-4 dark:border-border border-muted-foreground/10 rounded overflow-hidden';
 
 			const divTopBar = document.createElement('div');
 			divTopBar.className =
