@@ -55,7 +55,11 @@
 	<Edra bind:editor {content} limit={MAX_LIMIT} class="max-h-40 w-full overflow-auto" {onUpdate} />
 	<Button
 		size="icon"
-		disabled={!content || content.trim() === '' || characters > MAX_LIMIT || characters < 1}
+		disabled={!content ||
+			content.trim() === '' ||
+			characters > MAX_LIMIT ||
+			characters < 1 ||
+			editor?.storage.characterCount.words() < 1}
 		onclick={() => onSubmit(content.trim())}
 	>
 		<Icons.send />
