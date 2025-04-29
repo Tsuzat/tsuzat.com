@@ -5,12 +5,9 @@ import {
 	CalendarDays,
 	ArrowUpRight,
 	Clock,
-	Send,
-	Eye,
-	ThumbsUp,
-	LogOut,
 	Pen,
-	Trash2
+	Trash2,
+	Star
 } from '@lucide/svelte';
 import Accenture from './Accenture.svelte';
 import Neovim from './Neovim.svelte';
@@ -24,11 +21,8 @@ const Icons = {
 	plus: Plus,
 	calendar: CalendarDays,
 	clock: Clock,
-	eye: Eye,
-	like: ThumbsUp,
-	logOut: LogOut,
-	send: Send,
 	arrowUpRight: ArrowUpRight,
+	star: Star,
 	edit: Pen,
 	delete: Trash2,
 	accenture: Accenture,
