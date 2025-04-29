@@ -134,7 +134,7 @@
 	{/if}
 	<div class="my-4 flex flex-col gap-4">
 		{#each comments.getComments() as comment}
-			<RenderComment {comment} onEdit={() => comments.editComment(comment)} />
+			<RenderComment cUser={data.user} {comment} onEdit={() => comments.editComment(comment)} />
 		{/each}
 	</div>
 </div>
