@@ -20,10 +20,6 @@
 		() => (editor ? editor.storage.characterCount.characters() : 0) as number
 	);
 
-	$effect(() => {
-		console.log(typeof characters);
-	});
-
 	function onUpdate(props: { editor: Editor; transaction: Transaction }) {
 		content = props.editor.getHTML();
 	}
@@ -47,9 +43,11 @@
 		</Avatar.Root>
 		<span>{user.username}</span>
 	</div>
-	<Button variant="outline" size="icon" title="Sign out">
-		<Icons.logOut />
-	</Button>
+	<form method="POST" action="/">
+		<Button type="submit" variant="secondary" size="icon" title="Sign out">
+			<Icons.logOut />
+		</Button>
+	</form>
 </div>
 <div class="flex max-h-40 w-full items-end gap-1 overflow-hidden rounded-lg border p-2">
 	<Edra bind:editor {content} limit={MAX_LIMIT} class="max-h-40 w-full overflow-auto" {onUpdate} />
