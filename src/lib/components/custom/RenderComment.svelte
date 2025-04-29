@@ -13,11 +13,12 @@
 	import { timeAgo } from '$lib/utils';
 
 	interface Props {
+		cUser: User | null;
 		comment: Comment;
 		onEdit: (comment: Comment) => void;
 	}
 
-	const { comment, onEdit }: Props = $props();
+	const { comment, onEdit, cUser }: Props = $props();
 
 	let user = $state<User>();
 	let isEditing = $state<boolean>(false);
@@ -61,36 +62,38 @@
 				{#if comment.updatedAt !== comment.createdAt}
 					· <span class="text-muted-foreground text-sm">Edited</span>
 				{/if}
-				{#if !isEditing}
-					<Button
-						variant="ghost"
-						size="icon"
-						class="ml-auto"
-						title="Edit"
-						onclick={() => {
-							isEditing = true;
-						}}
-					>
-						<Icons.edit class="text-muted-foreground" />
-						<span class="sr-only">Edit</span>
-					</Button>
-				{:else}
-					<Button
-						variant="ghost"
-						size="icon"
-						class="ml-auto"
-						title="Save"
-						disabled={comment.content.trim() === '' ||
-							editor?.storage.characterCount.characters() < 1 ||
-							editor?.storage.characterCount.words() < 1}
-						onclick={() => {
-							onEdit(comment);
-							isEditing = false;
-						}}
-					>
-						<Icons.send />
-						<span class="sr-only">Edit</span>
-					</Button>
+				{#if cUser && cUser.id === comment.userId && cUser.id === user.id}
+					{#if !isEditing}
+						<Button
+							variant="ghost"
+							size="icon"
+							class="ml-auto"
+							title="Edit"
+							onclick={() => {
+								isEditing = true;
+							}}
+						>
+							<Icons.edit class="text-muted-foreground" />
+							<span class="sr-only">Edit</span>
+						</Button>
+					{:else}
+						<Button
+							variant="ghost"
+							size="icon"
+							class="ml-auto"
+							title="Save"
+							disabled={comment.content.trim() === '' ||
+								editor?.storage.characterCount.characters() < 1 ||
+								editor?.storage.characterCount.words() < 1}
+							onclick={() => {
+								onEdit(comment);
+								isEditing = false;
+							}}
+						>
+							<Icons.send />
+							<span class="sr-only">Edit</span>
+						</Button>
+					{/if}
 				{/if}
 			</div>
 			<Edra
