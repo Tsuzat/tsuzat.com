@@ -26,7 +26,7 @@
 </script>
 
 <NodeViewWrapper
-	class="group bg-muted dark:bg-muted/25 relative rounded p-6"
+	class="group code-wrapper bg-muted dark:bg-muted/25 relative rounded p-6"
 	draggable={false}
 	spellcheck={false}
 >
