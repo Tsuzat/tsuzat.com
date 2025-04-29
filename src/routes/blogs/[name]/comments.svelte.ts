@@ -32,4 +32,20 @@ export default class Comments {
 			console.log(res.status);
 		}
 	}
+
+	async editComment(comment: Comment) {
+		const res = await fetch(`/api/blog/${comment.blogId}/comments`, {
+			method: 'PATCH',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(comment)
+		});
+		if (res.ok) {
+			const body: Comment = await res.json();
+			this.setComments([...this.getComments().filter((c) => c.id !== comment.id), body]);
+		} else {
+			console.log(res.status);
+		}
+	}
 }
