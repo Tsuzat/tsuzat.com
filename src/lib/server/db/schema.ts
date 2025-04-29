@@ -1,4 +1,4 @@
-import { pgTable, serial, text, integer, timestamp, uuid } from 'drizzle-orm/pg-core';
+import { pgTable, text, integer, timestamp, uuid } from 'drizzle-orm/pg-core';
 
 export const blogs = pgTable('blogs', {
 	id: uuid('id').primaryKey().defaultRandom(),
@@ -17,12 +17,6 @@ export const comments = pgTable('comments', {
 		.notNull(),
 	createdAt: timestamp('created_at', { withTimezone: true, mode: 'date' }).notNull().defaultNow(),
 	updatedAt: timestamp('updated_at', { withTimezone: true, mode: 'date' }).notNull().defaultNow()
-});
-
-export const likes = pgTable('comments_likes', {
-	id: serial('id').primaryKey(),
-	commentId: uuid('comment_id').references(() => comments.id),
-	userId: text('user_id').references(() => user.id)
 });
 
 export const user = pgTable('users', {
@@ -46,5 +40,3 @@ export type User = typeof user.$inferSelect;
 export type Blog = typeof blogs.$inferSelect;
 
 export type Comment = typeof comments.$inferSelect;
-
-export type Like = typeof likes.$inferSelect;
