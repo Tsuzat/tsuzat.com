@@ -15,7 +15,7 @@
 </svelte:head>
 
 <div>
-	<div class="mt-16 mb-8">
+	<div class="my-8">
 		<TextGrow class="my-4 text-3xl font-bold" text="Namaste, Tsuzat here!" duration={0.5} />
 		<p class="animate-load-top fill-mode-both text-justify delay-300">
 			Hi, I'm Alok "Tsuzat" Singh — a software developer
@@ -98,11 +98,11 @@
 		</div>
 	</div>
 	<div class="animate-load-top fill-mode-both my-4 flex flex-col gap-4 delay-1000">
-		<span class="text-muted-foreground font-semibold">Projects</span>
+		<span class="text-muted-foreground font-semibold">Blogs</span>
 		{#each data.posts as post}
-			<a href={`/blogs/${post.slug}`} class="flex items-center gap-2">
-				<span>{post.metadata.title}</span>
-				<span>{post.metadata.publishedAt}</span>
+			<a href={`/blogs/${post.slug}`} class="flex items-center gap-4">
+				<span class="text-muted-foreground">{post.metadata.publishedAt}</span>
+				<span class="font-bold">{post.metadata.title}</span>
 			</a>
 		{/each}
 	</div>
