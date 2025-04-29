@@ -8,7 +8,9 @@ import {
 	Send,
 	Eye,
 	ThumbsUp,
-	LogOut
+	LogOut,
+	Pen,
+	Trash2
 } from '@lucide/svelte';
 import Accenture from './Accenture.svelte';
 import Neovim from './Neovim.svelte';
@@ -27,6 +29,8 @@ const Icons = {
 	logOut: LogOut,
 	send: Send,
 	arrowUpRight: ArrowUpRight,
+	edit: Pen,
+	delete: Trash2,
 	accenture: Accenture,
 	neovim: Neovim,
 	github: Github,
