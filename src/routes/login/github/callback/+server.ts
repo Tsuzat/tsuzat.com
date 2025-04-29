@@ -8,8 +8,6 @@ import type { OAuth2Tokens } from 'arctic';
 export async function GET(event: RequestEvent): Promise<Response> {
 	const code = event.url.searchParams.get('code');
 	const state = event.url.searchParams.get('state');
-	console.log('Code = ', code);
-	console.log('State = ', state);
 	const storedState = event.cookies.get('github_oauth_state') ?? null;
 	if (code === null || state === null || storedState === null) {
 		return new Response(null, {
