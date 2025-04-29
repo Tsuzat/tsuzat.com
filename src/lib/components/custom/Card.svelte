@@ -30,13 +30,15 @@
 >
 	<Card.Content class="flex flex-col gap-2 p-4">
 		<img src={project.img} alt={project.title} class="h-56 w-full rounded-lg object-cover" />
-		<div class="text-foreground text-center text-lg font-bold">{project.title}</div>
+		<div
+			class="text-foreground flex items-center justify-center gap-2 text-center text-lg font-bold"
+		>
+			{project.title}
+			{#if stars}
+				<Icons.star class="size-4" />
+				<span class="text-muted-foreground text-sm font-normal">{stars}</span>
+			{/if}
+		</div>
 		<div class="text-muted-foreground text-center text-sm">{project.description}</div>
-		<!-- {#if stars}
-			<div class="text-muted-foreground flex items-center justify-center gap-2 text-sm">
-				<Icons.star class="size-4 fill-amber-500 text-amber-500" />
-				<span>{stars}</span>
-			</div>
-		{/if} -->
 	</Card.Content>
 </Card.Root>
