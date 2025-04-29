@@ -15,7 +15,7 @@
 
 <Card.Root
 	onclick={() => goto(`/blogs/${slug}`)}
-	class="bg-background scale-100 cursor-pointer border-0 !p-1 transition-all duration-500 hover:scale-[102%]"
+	class="bg-background scale-100 cursor-pointer border-0 !p-1 shadow-none transition-all duration-500 hover:scale-[102%]"
 >
 	<Card.Content class="p-0">
 		<div class="flex items-center gap-4">
