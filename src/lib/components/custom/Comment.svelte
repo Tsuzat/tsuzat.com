@@ -16,6 +16,13 @@
 	let content = $state<string>('');
 	let editor = $state<Editor>();
 	const MAX_LIMIT = 256;
+	const characters = $derived.by(
+		() => (editor ? editor.storage.characterCount.characters() : 0) as number
+	);
+
+	$effect(() => {
+		console.log(typeof characters);
+	});
 
 	function onUpdate(props: { editor: Editor; transaction: Transaction }) {
 		content = props.editor.getHTML();
@@ -25,7 +32,7 @@
 		if (event.key === 'Enter' && (event.metaKey || event.ctrlKey)) {
 			event.preventDefault();
 			if (!content || content.trim() === '') return;
-			onSubmit(content);
+			onSubmit(content.trim());
 		}
 	}
 </script>
@@ -48,8 +55,8 @@
 	<Edra bind:editor {content} limit={MAX_LIMIT} class="max-h-40 w-full overflow-auto" {onUpdate} />
 	<Button
 		size="icon"
-		disabled={!content || content.trim() === ''}
-		onclick={() => onSubmit(content)}
+		disabled={!content || content.trim() === '' || characters > MAX_LIMIT || characters < 1}
+		onclick={() => onSubmit(content.trim())}
 	>
 		<Icons.send />
 	</Button>
