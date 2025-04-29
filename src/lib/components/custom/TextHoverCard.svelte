@@ -2,7 +2,6 @@
 	import * as HoverCard from '$lib/components/ui/hover-card';
 	import type { Snippet } from 'svelte';
 	import { cn } from '$lib/utils';
-	import { fly, slide } from 'svelte/transition';
 
 	interface Props {
 		text: string;

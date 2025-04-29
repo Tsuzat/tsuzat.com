@@ -5,27 +5,12 @@
 	import './+page.css';
 	import CodeInjector from '$lib/components/custom/CodeInjector.svelte';
 	import Icons from '$lib/components/icons';
-	import Comment from '$lib/components/custom/Comment.svelte';
-	import { Views } from './views.svelte';
-	import { Button } from '$lib/components/ui/button';
-	import Comments from './comments.svelte';
-	import RenderComment from '$lib/components/custom/RenderComment.svelte';
 
 	interface Props {
 		data: PageData;
 	}
 
 	let { data }: Props = $props();
-	const views = new Views();
-	const comments = new Comments();
-
-	$effect(() => {
-		console.log(data.metadata.id);
-		views.fetchViews(data.metadata.id).then(() => {
-			views.updateViews(data.metadata.id);
-		});
-		comments.fetchComments(data.metadata.id);
-	});
 
 	onMount(async () => {
 		// Find the code tags
@@ -99,12 +84,6 @@
 				{data.metadata.readTime} mins
 			</span>
 		</span>
-		<span class="flex items-center gap-2">
-			<Icons.eye class="size-4" />
-			<span>
-				{views.getViews()} views
-			</span>
-		</span>
 	</p>
 	<p class="text-muted-foreground my-4">{data.metadata.summary}</p>
 	<hr />
@@ -113,28 +92,5 @@
 		<CodeInjector>
 			<data.post />
 		</CodeInjector>
-	</div>
-
-	<hr />
-
-	<h2 class="my-4 text-xl font-bold">Comments</h2>
-	{#if data.user}
-		{@const userId = data.user.id}
-		<Comment
-			user={data.user}
-			onSubmit={async (content) => {
-				await comments.addComment(content, data.metadata.id, userId);
-			}}
-		/>
-	{:else}
-		<Button variant="secondary" href="/login/github">
-			<Icons.github />
-			Sign In with Github to Comment
-		</Button>
-	{/if}
-	<div class="my-4 flex flex-col gap-4">
-		{#each comments.getComments() as comment}
-			<RenderComment cUser={data.user} {comment} onEdit={() => comments.editComment(comment)} />
-		{/each}
 	</div>
 </div>
