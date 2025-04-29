@@ -4,9 +4,8 @@
 	import TextHoverCard from '$lib/components/custom/TextHoverCard.svelte';
 	import Icons from '$lib/components/icons';
 
-	import neosolarized from '$lib/assets/static/neosolazied.png';
-	import edra from '$lib/assets/static/edra.png';
 	import Blog from '$lib/components/custom/Blog.svelte';
+	import { projects } from '$lib/utils';
 
 	const { data } = $props();
 </script>
@@ -84,18 +83,9 @@
 	<div class="animate-load-top fill-mode-both mt-8 delay-1000">
 		<span class="text-muted-foreground font-semibold">Projects</span>
 		<div class="mt-4 flex flex-col flex-wrap items-center justify-between sm:flex-row">
-			<Card
-				href="https://github.com/Tsuzat/NeoSolarized.nvim"
-				img={neosolarized}
-				title="NeoSolarized.nvim"
-				description="NeoSolarized colorscheme for NeoVim with full transparency"
-			/>
-			<Card
-				href="https://edra.tsuzat.com/"
-				img={edra}
-				title="Edra"
-				description="Best Rich Text Editor, made for Svelte Developers with Tiptap"
-			/>
+			{#each projects as project}
+				<Card {project} />
+			{/each}
 		</div>
 	</div>
 	<div class="animate-load-top fill-mode-both my-4 flex flex-col gap-4 delay-1000">
