@@ -50,7 +50,7 @@
 		{#each skills as skill}
 			<a
 				href={skill.href}
-				class="group bg-muted-foreground/10 dark:bg-muted/25 flex w-[calc(50%-1rem)] items-center gap-2 rounded-lg p-2"
+				class="group bg-muted-foreground/10 dark:bg-muted/25 flex w-full items-center gap-2 rounded-lg p-2 sm:w-[calc(50%-1rem)]"
 				target="_blank"
 			>
 				<Icon
