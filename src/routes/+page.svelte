@@ -77,8 +77,9 @@
 		{@render SocialLink('https://github.com/Tsuzat', 'Github')}
 		{@render SocialLink('https://www.linkedin.com/in/alok-singh-tsuzat/', 'LinkedIn')}
 		{@render SocialLink('mailto:contact@tsuzat.com', 'Email')}
-		{@render SocialLink('https://bsky.app/profile/tsuzat.com', 'Bluesky')}
-		{@render SocialLink('https://x.com/TheTsuzat', 'X (Twitter)')}
+		<!-- {@render SocialLink('https://bsky.app/profile/tsuzat.com', 'Bluesky')} -->
+		{@render SocialLink('https://x.com/tsuzatdotcom', 'X (Twitter)')}
+		{@render SocialLink('/resume', 'Resume')}
 	</div>
 	<div class="animate-load-top fill-mode-both mt-8 delay-1000">
 		<span class="text-muted-foreground font-semibold">Projects</span>
@@ -96,6 +97,7 @@
 				title={post.metadata.title}
 				summary={post.metadata.summary}
 				publishedAt={post.metadata.publishedAt}
+				readTime={post.metadata.readTime}
 			/>
 		{/each}
 	</div>
