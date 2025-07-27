@@ -18,6 +18,7 @@
 			title={post.metadata.title}
 			summary={post.metadata.summary}
 			publishedAt={post.metadata.publishedAt}
+			readTime={post.metadata.readTime}
 		/>
 	{/each}
 
