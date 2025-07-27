@@ -94,10 +94,10 @@ export const skills: Skill[] = [
 		icon: 'devicon:neovim'
 	},
 	{
-		name: 'Appwrite',
-		href: 'https://appwrite.io/',
-		description: 'Build like a team of hundreds',
-		icon: 'devicon:appwrite'
+		name: 'Supabase',
+		href: 'https://supabase.com/',
+		description: 'Build in a weekend Scale to millions',
+		icon: 'devicon:supabase'
 	},
 	{
 		name: 'Git',

@@ -66,4 +66,5 @@
 			</a>
 		{/each}
 	</div>
+	<a href="/resume" class="dusration-500 my-8 transition-all hover:underline">Expore More...</a>
 </div>
