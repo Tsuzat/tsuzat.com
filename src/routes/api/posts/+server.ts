@@ -25,12 +25,13 @@ export const GET: RequestHandler = async () => {
 				metadata: markdownPostModule.metadata
 			};
 		};
-
 		postPromises.push(loadPostSlugAndMetadata());
 	}
 
 	// load all posts concurrently
-	const posts = await Promise.all(postPromises);
+	let posts = await Promise.all(postPromises);
+
+	posts = posts.filter((post) => post.metadata.production);
 
 	// sort by publication date (descending/most recent first)
 	const sortedPosts = posts.sort((post1, post2) => {
