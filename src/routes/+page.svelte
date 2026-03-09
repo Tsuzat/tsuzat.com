@@ -6,17 +6,60 @@
 
 	import Blog from '$lib/components/custom/Blog.svelte';
 	import { projects } from '$lib/utils';
+	import { Button } from '$lib/components/ui/button/index.js';
 
 	const { data } = $props();
 </script>
 
 <svelte:head>
 	<title>Tsuzat | Alok Singh</title>
+	<!-- Cal element-click embed code begins -->
+	<script type="text/javascript">
+		(function (C, A, L) {
+			let p = function (a, ar) {
+				a.q.push(ar);
+			};
+			let d = C.document;
+			C.Cal =
+				C.Cal ||
+				function () {
+					let cal = C.Cal;
+					let ar = arguments;
+					if (!cal.loaded) {
+						cal.ns = {};
+						cal.q = cal.q || [];
+						d.head.appendChild(d.createElement('script')).src = A;
+						cal.loaded = true;
+					}
+					if (ar[0] === L) {
+						const api = function () {
+							p(api, arguments);
+						};
+						const namespace = ar[1];
+						api.q = api.q || [];
+						if (typeof namespace === 'string') {
+							cal.ns[namespace] = cal.ns[namespace] || api;
+							p(cal.ns[namespace], ar);
+							p(cal, ['initNamespace', namespace]);
+						} else p(cal, ar);
+						return;
+					}
+					p(cal, ar);
+				};
+		})(window, 'https://app.cal.com/embed/embed.js', 'init');
+		Cal('init', 'qc', { origin: 'https://app.cal.com' });
+		// Important: Please add the following attributes to the element that should trigger the calendar to open upon clicking.
+		// `data-cal-link="tsuzat/qc"`
+		// data-cal-namespace="qc"
+		// `data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'`
+		Cal.ns.qc('ui', { hideEventTypeDetails: false, layout: 'month_view' });
+	</script>
+	<!-- Cal element-click embed code ends -->
 </svelte:head>
 
 <div>
 	<div class="my-8">
-		<TextGrow class="my-4 text-3xl font-bold" text="Namaste, Tsuzat here!" duration={0.5} />
+		<TextGrow class="my-4 text-3xl font-bold" text="Hi, Tsuzat here!" duration={1} />
 		<p class="animate-load-top fill-mode-both text-justify delay-300">
 			Hi, I'm Alok "Tsuzat" Singh — a software developer
 			<TextHoverCard href="https://www.accenture.com/" text="@accenture" classText="underline">
@@ -59,7 +102,7 @@
 					<span>NeoSolarized colorscheme for NeoVim with full transparency </span>
 				</div>
 			</TextHoverCard>Passionate about building and learning, I am currently working on
-			<strong>Smart Bug Triage solutions using GenAI</strong>
+			<strong><a href="/posts/">Smart Bug Triage solutions using GenAI</a> </strong>
 			within my organization.
 		</p>
 	</div>
@@ -77,21 +120,23 @@
 		{@render SocialLink('https://github.com/Tsuzat', 'Github')}
 		{@render SocialLink('https://www.linkedin.com/in/alok-singh-tsuzat/', 'LinkedIn')}
 		{@render SocialLink('mailto:contact@tsuzat.com', 'Email')}
-		<!-- {@render SocialLink('https://bsky.app/profile/tsuzat.com', 'Bluesky')} -->
-		{@render SocialLink('https://x.com/tsuzatdotcom', 'X (Twitter)')}
 		{@render SocialLink('/resume', 'Resume')}
+		<Button data-cal-link="tsuzat/qc" data-cal-namespace="qc" class="rounded-full px-4! py-1!">
+			<Icons.calendar />
+			<span>Book a Meeting</span>
+		</Button>
 	</div>
 	<div class="animate-load-top fill-mode-both mt-8 delay-1000">
 		<span class="text-muted-foreground font-semibold">Projects</span>
 		<div class="mt-4 flex flex-col flex-wrap items-center justify-between sm:flex-row">
-			{#each projects as project}
+			{#each projects as project (project.title)}
 				<Card {project} />
 			{/each}
 		</div>
 	</div>
 	<div class="animate-load-top fill-mode-both my-4 flex flex-col gap-4 delay-1000">
 		<span class="text-muted-foreground font-semibold">Blogs</span>
-		{#each data.posts as post}
+		{#each data.posts as post, idx (idx)}
 			<Blog
 				slug={post.slug}
 				title={post.metadata.title}

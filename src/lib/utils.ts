@@ -4,6 +4,7 @@ import { twMerge } from 'tailwind-merge';
 
 import neosolarized from '$lib/assets/static/neosolazied.png';
 import edra from '$lib/assets/static/edra.png';
+import bugtriage from '$lib/assets/posts/smart-bug-triage-poc/poster.png';
 
 export function cn(...inputs: ClassValue[]) {
 	return twMerge(clsx(inputs));
@@ -32,7 +33,7 @@ export interface Project {
 	img: string;
 	title: string;
 	description: string;
-	github: {
+	github?: {
 		username: string;
 		repo: string;
 	};
@@ -48,6 +49,14 @@ export const projects: Project[] = [
 			username: 'Tsuzat',
 			repo: 'edra'
 		}
+	},
+	{
+		href: '/blogs/smart-bug-triage-poc',
+		img: bugtriage,
+		title: 'Smart Bug Triage (AI PoC)',
+		description:
+			'AI-powered bug triage system using embeddings, vector search, and LLM reasoning to analyze issues and suggest fixes automatically.',
+		github: undefined
 	},
 	{
 		href: 'https://github.com/Tsuzat/NeoSolarized.nvim',

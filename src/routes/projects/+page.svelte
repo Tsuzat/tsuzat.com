@@ -13,7 +13,7 @@
 <div
 	class="animate-load-top fill-mode-both my-4 flex flex-col flex-wrap items-center justify-between delay-500 sm:flex-row"
 >
-	{#each projects as project}
+	{#each projects as project (project.title)}
 		<Card {project} />
 	{/each}
 </div>
