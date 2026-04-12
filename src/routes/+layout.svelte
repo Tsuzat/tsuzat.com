@@ -3,6 +3,7 @@
 	import '@fontsource-variable/open-sans';
 	import '../app.css';
 	import Navbar from '$lib/components/custom/Navbar.svelte';
+	import Particles from '$lib/components/custom/Particles.svelte';
 
 	let { children } = $props();
 </script>
@@ -21,6 +22,7 @@
 </svelte:head>
 
 <ModeWatcher />
+<Particles size={1.125} class="fixed top-0 left-0 -z-10 h-screen w-screen" />
 <main class="mx-auto max-w-3xl p-4">
 	<Navbar />
 	{@render children()}

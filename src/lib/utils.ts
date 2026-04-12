@@ -51,6 +51,17 @@ export const projects: Project[] = [
 		}
 	},
 	{
+		href: 'https://www.nota.ink/',
+		img: 'https://www.nota.ink/previews/dark.webp',
+		title: 'Nota',
+		description:
+			'A Fast, Modern, Feature Rich and Lightweight Note taking desktop application made with native AI integration',
+		github: {
+			username: 'Tsuzat',
+			repo: 'nota'
+		}
+	},
+	{
 		href: '/blogs/smart-bug-triage-poc',
 		img: bugtriage,
 		title: 'Smart Bug Triage (AI PoC)',

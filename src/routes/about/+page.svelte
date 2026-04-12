@@ -1,14 +1,40 @@
 <script lang="ts">
-	import TextGrow from '$lib/components/custom/TextGrow.svelte';
-	import Icon from '@iconify/svelte';
-	import { skills } from '$lib/utils';
+	import IconCloud from '$lib/components/custom/IconCloud.svelte';
+	const slugs = [
+		'typescript',
+		'javascript',
+		'go',
+		'railway',
+		'betterauth',
+		'cloudflare',
+		'tailwindcss',
+		'svelte',
+		'html5',
+		'css3',
+		'nodedotjs',
+		'express',
+		'drizzle',
+		'railway',
+		'postgresql',
+		'firebase',
+		'vercel',
+		'docker',
+		'git',
+		'github',
+		'gitlab'
+	];
+	let images = $state(slugs.map((slug) => `https://cdn.simpleicons.org/${slug}/${slug}`));
 </script>
 
 <svelte:head>
 	<title>About | Tsuzat</title>
 </svelte:head>
 
-<TextGrow text="About" duration={0.5} class="mt-12 text-2xl font-bold" />
+<h2
+	class="animate-in fade-in zoom-in-95 blur-in-sm fill-mode-both my-4 text-2xl font-bold duration-1000"
+>
+	About
+</h2>
 <div class="animate-load-top fill-mode-both my-4 text-justify delay-300">
 	<p>
 		I'm Alok "Tsuzat" Singh — a software developer. I'm the creator of Edra and NeoSolarized.nvim.
@@ -46,25 +72,8 @@
 
 <div class="animate-load-top fill-mode-both my-8 text-justify delay-900">
 	<div class="my-4 text-2xl font-bold">Tech Skills</div>
-	<div class="flex flex-col flex-wrap items-center justify-between gap-2 sm:flex-row">
-		{#each skills as skill}
-			<a
-				href={skill.href}
-				class="group bg-muted-foreground/10 dark:bg-muted/25 flex w-full items-center gap-2 rounded-lg p-2 sm:w-[calc(50%-1rem)]"
-				target="_blank"
-			>
-				<Icon
-					icon={skill.icon}
-					width="24"
-					height="24"
-					class="bg-muted-foreground/20 dark:bg-muted/75 size-10 scale-100 rounded-md p-2 transition-all duration-500 group-hover:scale-110"
-				/>
-				<div class="flex flex-col">
-					<span class="font-bold">{skill.name}</span>
-					<span class="text-muted-foreground text-sm">{skill.description}</span>
-				</div>
-			</a>
-		{/each}
+	<div class="relative flex size-full items-center justify-center overflow-hidden">
+		<IconCloud {images} />
 	</div>
 	<a href="/resume" class="dusration-500 my-8 transition-all hover:underline">Expore More...</a>
 </div>

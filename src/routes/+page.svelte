@@ -1,6 +1,5 @@
 <script lang="ts">
 	import Card from '$lib/components/custom/Card.svelte';
-	import TextGrow from '$lib/components/custom/TextGrow.svelte';
 	import TextHoverCard from '$lib/components/custom/TextHoverCard.svelte';
 	import Icons from '$lib/components/icons';
 
@@ -58,8 +57,12 @@
 </svelte:head>
 
 <div>
-	<div class="my-8">
-		<TextGrow class="my-4 text-3xl font-bold" text="Hi, Tsuzat here!" duration={1} />
+	<div class="my-12">
+		<h2
+			class="animate-in fade-in zoom-in-95 blur-in-sm fill-mode-both my-4 text-2xl font-bold duration-1000"
+		>
+			Hi, Tsuzat here!
+		</h2>
 		<p class="animate-load-top fill-mode-both text-justify delay-300">
 			Hi, I'm Alok "Tsuzat" Singh — a software developer
 			<TextHoverCard href="https://www.accenture.com/" text="@accenture" classText="underline">
@@ -76,7 +79,7 @@
 			</TextHoverCard>, based in Hyderabad, India. I'm the creator of
 			<TextHoverCard
 				href="https://edra.tsuzat.com/"
-				text="Edra"
+				text="Edra,"
 				classText="underline"
 				class="max-w-80"
 			>
@@ -85,9 +88,24 @@
 					<div>Edra</div>
 				</div>
 				<div class="text-muted-foreground text-sm text-wrap">
-					<span>Best Rich Text Editor, made for Svelte Developers with Tiptap </span>
+					<span>Best Rich Text Editor, made for Svelte Developers with Tiptap</span>
 				</div>
-			</TextHoverCard>&
+			</TextHoverCard>
+			<TextHoverCard
+				href="https://www.nota.ink/"
+				text="Nota"
+				classText="underline"
+				class="max-w-80"
+			>
+				<div class="flex items-center gap-2">
+					<img src="https://www.nota.ink/favicon.ico" alt="Nota" class="size-6" />
+					<div>Nota</div>
+				</div>
+				<div class="text-muted-foreground text-sm text-wrap">
+					<span>A fast, modern note taking app with native AI features </span>
+				</div>
+			</TextHoverCard>
+			&
 			<TextHoverCard
 				href="https://github.com/Tsuzat/NeoSolarized.nvim"
 				text="NeoSolarized.nvim"
@@ -102,7 +120,9 @@
 					<span>NeoSolarized colorscheme for NeoVim with full transparency </span>
 				</div>
 			</TextHoverCard>Passionate about building and learning, I am currently working on
-			<strong><a href="/posts/">Smart Bug Triage solutions using GenAI</a> </strong>
+			<strong class="underline"
+				><a href="/blogs/smart-bug-triage-poc">Smart Bug Triage solutions using GenAI</a>
+			</strong>
 			within my organization.
 		</p>
 	</div>
@@ -121,7 +141,7 @@
 		{@render SocialLink('https://www.linkedin.com/in/alok-singh-tsuzat/', 'LinkedIn')}
 		{@render SocialLink('mailto:contact@tsuzat.com', 'Email')}
 		{@render SocialLink('/resume', 'Resume')}
-		<Button data-cal-link="tsuzat/qc" data-cal-namespace="qc" class="rounded-full px-4! py-1!">
+		<Button data-cal-link="tsuzat/qc" data-cal-namespace="qc" class="rounded-full px-2! py-px!">
 			<Icons.calendar />
 			<span>Book a Meeting</span>
 		</Button>

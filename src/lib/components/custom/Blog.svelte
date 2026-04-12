@@ -12,17 +12,21 @@
 	const { slug, title, summary, publishedAt, readTime }: Props = $props();
 
 	import * as Card from '$lib/components/ui/card';
+	import { CalendarDays } from '@lucide/svelte';
 </script>
 
 <Card.Root
 	onclick={() => goto(`/blogs/${slug}`)}
-	class="bg-background scale-100 cursor-pointer border-0 !p-1 shadow-none transition-all duration-500 hover:scale-[102%]"
+	class="bg-background hover:bg-muted dark:hover:bg-muted/50 scale-100 cursor-pointer  border-0 p-2! shadow-none transition-all duration-500 hover:scale-102"
 >
-	<Card.Content class="p-0">
-		<div class="flex flex-wrap items-center gap-4">
-			<span>{publishedAt}</span>
-			<span class="font-bold">{title}</span>
-			<span class="text-muted-foreground ml-auto">{readTime} min</span>
+	<Card.Content class="flex flex-col gap-2 p-0">
+		<div class="text-xl font-bold text-balance">
+			{title}
+		</div>
+		<div class="inline-flex items-center gap-2">
+			<span class="text-muted-foreground">{readTime} min read</span>
+			<span class="text-muted-foreground">·</span>
+			<span class="flex items-center gap-2"><CalendarDays class="size-4" /> {publishedAt}</span>
 		</div>
 		<div>
 			<p class="text-muted-foreground text-sm">{summary}</p>
