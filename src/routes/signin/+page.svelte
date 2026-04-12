@@ -7,9 +7,7 @@
 	const { form } = $props();
 </script>
 
-<div
-	class="inset-0 flex h-screen w-screen flex-col items-center justify-center gap-8 bg-linear-to-b from-primary/20 via-background/50 to-background"
->
+<div class="mx-auto flex size-full flex-col items-center justify-center gap-8">
 	<TiltCard tiltLimit={5} scale={1.01} class="size-fit rounded-lg!">
 		<Card.Root class="w-120 max-w-full border bg-transparent p-4">
 			<Card.Header class="text-center">

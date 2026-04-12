@@ -3,7 +3,7 @@
 // Runtime types generated with workerd@1.20260409.1 2026-04-12 nodejs_compat
 declare namespace Cloudflare {
 	interface GlobalProps {
-		mainModule: typeof import("./.svelte-kit/cloudflare/_worker");
+		mainModule: typeof import('./.svelte-kit/cloudflare/_worker');
 	}
 	interface Env {
 		DB: D1Database;
@@ -22,7 +22,18 @@ type StringifyValues<EnvType extends Record<string, unknown>> = {
 	[Binding in keyof EnvType]: EnvType[Binding] extends string ? EnvType[Binding] : string;
 };
 declare namespace NodeJS {
-	interface ProcessEnv extends StringifyValues<Pick<Cloudflare.Env, "CLOUDFLARE_ACCOUNT_ID" | "CLOUDFLARE_DATABASE_ID" | "CLOUDFLARE_D1_TOKEN" | "ORIGIN" | "BETTER_AUTH_SECRET" | "GITHUB_CLIENT_ID" | "GITHUB_CLIENT_SECRET">> {}
+	interface ProcessEnv extends StringifyValues<
+		Pick<
+			Cloudflare.Env,
+			| 'CLOUDFLARE_ACCOUNT_ID'
+			| 'CLOUDFLARE_DATABASE_ID'
+			| 'CLOUDFLARE_D1_TOKEN'
+			| 'ORIGIN'
+			| 'BETTER_AUTH_SECRET'
+			| 'GITHUB_CLIENT_ID'
+			| 'GITHUB_CLIENT_SECRET'
+		>
+	> {}
 }
 
 // Begin runtime types

@@ -1,5 +1,4 @@
 <script lang="ts">
-	import ToggleMode from '$lib/components/custom/ToggleMode.svelte';
 	import { ModeWatcher } from 'mode-watcher';
 	import './layout.css';
 	import { resolve } from '$app/paths';
@@ -7,18 +6,21 @@
 	import { page } from '$app/state';
 	import { cn } from '$lib/utils';
 	import { scale } from 'svelte/transition';
+	import { AnimatedThemeToggler } from '$lib/components/magic/animated-theme-toggler';
+	import Particles from '$lib/components/custom/Particles.svelte';
 	let { children } = $props();
 	const links = ['about', 'blogs', 'projects'];
 </script>
 
 <ModeWatcher />
+<Particles className="-z-10 fixed top-0 h-screen w-screen" />
 
 <header class="sticky top-0 mx-auto flex max-w-3xl items-center justify-between p-4">
 	<a href={resolve('/')} class="nodefault inline-flex items-center gap-2">
 		<img src="/favicon.svg" alt="logo" class="size-8" />
-		<span class="hidden text-xl font-bold sm:block">TSUZAT</span>
+		<span class="hidden text-xl font-bold sm:block">Tsuzat</span>
 	</a>
-	<div class="hidden items-center gap-4 sm:flex">
+	<div class="flex items-center gap-4">
 		{#each links as link, idx (idx)}
 			{@const isActive = page.url.pathname.startsWith(`/${link}`)}
 			<a
@@ -32,7 +34,7 @@
 				{#if isActive}
 					<div
 						transition:scale
-						class="absolute inset-0 -z-10 rounded-lg bg-muted-foreground/20 dark:bg-muted"
+						class="absolute inset-0 -z-10 rounded-lg bg-muted-foreground/20 dark:bg-muted/75"
 					></div>
 				{/if}
 				{link}
@@ -40,7 +42,7 @@
 		{/each}
 	</div>
 	<div class="inline-flex items-center gap-2">
-		<ToggleMode />
+		<AnimatedThemeToggler />
 		<Button href={resolve('/signin')} class="nodefault">Sign In</Button>
 	</div>
 </header>
