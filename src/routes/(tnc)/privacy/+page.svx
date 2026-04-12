@@ -1,0 +1,62 @@
+# Privacy Policy
+
+Last Updated: April 12, 2026
+
+Your privacy is important to me. This Privacy Policy explains how I collect, use, and protect your information when you use my personal website.
+
+## 1. Information We Collect
+
+When you use this website, we may collect the following types of information:
+
+- **Authentication Data**: If you sign in using GitHub, we receive information from GitHub's OAuth service, including your:
+  - GitHub username
+  - Primary email address
+  - Profile picture URL
+  - Public profile information
+- **Usage Data**: We may collect non-identifiable information about how you interact with the site, such as pages visited and time spent on the site.
+
+## 2. How We Use Your Information
+
+I use the collected information for the following purposes:
+
+- To provide and maintain the website's functionality.
+- To manage your user account and authenticate your sessions.
+- To personalize your experience on the site.
+- To improve the website based on usage patterns.
+
+## 3. Data Storage and Security
+
+- **Database**: Your basic profile information is stored in a secure D1 database hosted on Cloudflare.
+- **No Passwords**: We never see or store your GitHub password. Authentication is handled entirely by GitHub.
+- **Security**: I implement reasonable security measures to protect your data from unauthorized access or disclosure. However, no method of transmission over the internet is 100% secure.
+
+## 4. Third-Party Services
+
+This website uses third-party services that may collect information:
+
+- **GitHub**: For authentication. Please review [GitHub's Privacy Statement](https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement).
+- **Cloudflare**: For hosting and infrastructure. Please review [Cloudflare's Privacy Policy](https://www.cloudflare.com/privacypolicy/).
+
+## 5. Cookies
+
+We use essential cookies to manage your authentication session. These cookies are necessary for the website to function correctly when you are signed in. You can disable cookies in your browser settings, but this will prevent you from signing in.
+
+## 6. Your Rights
+
+Depending on your location, you may have rights regarding your personal data, including the right to:
+
+- Access the data I hold about you.
+- Request the deletion of your data.
+- Opt-out of certain data collection.
+
+**Account Deletion**: If you wish to delete your account and all associated data, please send a request to [contact@tsuzat.com](mailto:contact@tsuzat.com). We will process your request within a reasonable timeframe.
+
+To exercise any of these rights, please contact me through the links on the homepage.
+
+## 7. Changes to This Policy
+
+I may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated "Last Updated" date.
+
+## 8. Contact Me
+
+If you have any questions or concerns about this Privacy Policy, please reach out via the contact information provided on the homepage.

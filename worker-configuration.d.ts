@@ -19,7 +19,18 @@ type StringifyValues<EnvType extends Record<string, unknown>> = {
 	[Binding in keyof EnvType]: EnvType[Binding] extends string ? EnvType[Binding] : string;
 };
 declare namespace NodeJS {
-	interface ProcessEnv extends StringifyValues<Pick<Cloudflare.Env, "CLOUDFLARE_ACCOUNT_ID" | "CLOUDFLARE_DATABASE_ID" | "CLOUDFLARE_D1_TOKEN" | "ORIGIN" | "BETTER_AUTH_SECRET" | "GITHUB_CLIENT_ID" | "GITHUB_CLIENT_SECRET">> {}
+	interface ProcessEnv extends StringifyValues<
+		Pick<
+			Cloudflare.Env,
+			| 'CLOUDFLARE_ACCOUNT_ID'
+			| 'CLOUDFLARE_DATABASE_ID'
+			| 'CLOUDFLARE_D1_TOKEN'
+			| 'ORIGIN'
+			| 'BETTER_AUTH_SECRET'
+			| 'GITHUB_CLIENT_ID'
+			| 'GITHUB_CLIENT_SECRET'
+		>
+	> {}
 }
 
 // Begin runtime types
@@ -10381,7 +10392,7 @@ type AIGatewayHeaders = {
 	[key: string]: string | number | boolean | object;
 };
 type AIGatewayUniversalRequest = {
-	provider: AIGatewayProviders | string;  
+	provider: AIGatewayProviders | string;
 	endpoint: string;
 	headers: Partial<AIGatewayHeaders>;
 	query: unknown;
@@ -10398,7 +10409,7 @@ declare abstract class AiGateway {
 			extraHeaders?: object;
 		}
 	): Promise<Response>;
-	getUrl(provider?: AIGatewayProviders | string): Promise<string>;  
+	getUrl(provider?: AIGatewayProviders | string): Promise<string>;
 }
 /**
  * @deprecated Use the standalone AI Search Workers binding instead.

@@ -4,11 +4,16 @@
 @import '@fontsource-variable/inter';
 
 @custom-variant dark (&:is(.dark *));
-@plugin '@tailwindcss/typography';
+
+html {
+	-webkit-text-size-adjust: 100%;
+	-ms-overflow-style: -ms-autohiding-scrollbar;
+	scroll-behavior: smooth;
+}
 
 :root {
 	--background: oklch(1 0 0);
-	--foreground: oklch(0.145 0 0);
+	--foreground: oklch(23.929% 0.00003 271.152);
 	--card: oklch(1 0 0);
 	--card-foreground: oklch(0.145 0 0);
 	--popover: oklch(1 0 0);
@@ -39,11 +44,25 @@
 	--sidebar-accent-foreground: oklch(0.205 0 0);
 	--sidebar-border: oklch(0.922 0 0);
 	--sidebar-ring: oklch(0.708 0 0);
+
+	font-size: 16px !important;
+	font-family:
+		-apple-system, BlinkMacSystemFont, 'Inter Variable', 'DM Sans Variable', 'Noto Color Emoji',
+		'Apple Color Emoji', 'Segoe UI Emoji', Times, Symbola, Aegyptus, Code2000, Code2001, Code2002,
+		Musica, serif, LastResort;
+	line-height: 24px;
+	font-weight: 400;
+	text-rendering: optimizeLegibility;
+
+	-webkit-font-smoothing: auto;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-text-size-adjust: 100%;
+	-ms-overflow-style: -ms-autohiding-scrollbar;
 }
 
 .dark {
 	--background: oklch(0.145 0 0);
-	--foreground: oklch(0.985 0 0);
+	--foreground: oklch(90% 0.0001 271.152);
 	--card: oklch(0.205 0 0);
 	--card-foreground: oklch(0.985 0 0);
 	--popover: oklch(0.205 0 0);
@@ -127,4 +146,79 @@
 	html {
 		@apply font-sans;
 	}
+
+	a:not(.nodefault) {
+		@apply text-foreground underline hover:text-muted-foreground;
+	}
+
+	h1 {
+		@apply scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl;
+	}
+
+	h2 {
+		@apply mt-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0;
+	}
+
+	h3 {
+		@apply mt-8 scroll-m-20 text-2xl font-semibold tracking-tight;
+	}
+
+	h4 {
+		@apply scroll-m-20 text-xl font-semibold tracking-tight;
+	}
+
+	p {
+		@apply leading-7 not-first:mt-6;
+	}
+
+	blockquote {
+		@apply mt-6 border-s-2 ps-6 italic;
+	}
+
+	ul {
+		@apply my-6 ms-6 list-disc [&>li]:mt-2;
+	}
+
+	code {
+		@apply relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold;
+	}
+
+	small {
+		@apply text-sm leading-none font-medium;
+	}
+
+	table {
+		@apply w-full;
+	}
+
+	tr {
+		@apply m-0 border-t p-0 even:bg-muted;
+	}
+
+	th {
+		@apply border px-4 py-2 text-start font-bold [[align=center]]:text-center [[align=right]]:text-end;
+	}
+
+	td {
+		@apply border px-4 py-2 text-start [[align=center]]:text-center [[align=right]]:text-end;
+	}
+}
+
+@layer components {
+	.lead {
+		@apply text-xl text-muted-foreground;
+	}
+
+	.large {
+		@apply text-lg font-semibold;
+	}
+
+	.muted {
+		@apply text-sm text-muted-foreground;
+	}
+}
+
+* {
+	scrollbar-width: thin;
+	scrollbar-color: color-mix(in srgb, var(--muted-foreground) 25%, transparent) transparent;
 }

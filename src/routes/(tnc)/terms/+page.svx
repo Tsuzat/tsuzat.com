@@ -1,0 +1,50 @@
+# Terms of Service
+
+Last Updated: April 12, 2026
+
+Welcome to my personal website. By accessing or using this site, you agree to comply with and be bound by the following terms and conditions.
+
+## 1. Acceptance of Terms
+
+By using this website, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service. If you do not agree, please do not use the site.
+
+## 2. User Accounts & Authentication
+
+This website allows users to sign in using third-party services, specifically **GitHub**.
+
+- **Data Collection**: When you sign in via GitHub, we may collect basic information such as your username, email address, and profile picture as provided by GitHub's OAuth service.
+- **Responsibility**: You are responsible for maintaining the security of your GitHub account. Any actions taken through your authenticated session are your responsibility.
+- **No Password Storage**: We do not store your GitHub password; authentication is handled entirely by GitHub.
+- **Account Deletion**: If you wish to delete your account and all associated data, please send a request to [contact@tsuzat.com](mailto:contact@tsuzat.com). We will process your request within a reasonable timeframe.
+
+## 3. Acceptable Use
+
+You agree to use this website only for lawful purposes. You are prohibited from:
+
+- Attempting to interfere with the website's performance or security.
+- Using the site to distribute malware or engage in phishing.
+- Posting or transmitting any content that is illegal, offensive, or infringes on others' rights.
+
+## 4. Intellectual Property
+
+All original content on this website, including text, code, and design, is owned by me unless otherwise stated. You may not reproduce or redistribute this content without explicit permission.
+
+## 5. Privacy
+
+Your privacy is important. Please refer to our [Privacy Policy](/privacy) (if applicable) for details on how we handle your data. By using GitHub to sign in, you are also subject to [GitHub's Privacy Statement](https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement).
+
+## 6. Limitation of Liability
+
+This website is provided "as is" without any warranties. I am not liable for any damages arising from your use of the site or any information provided herein.
+
+## 7. Termination
+
+I reserve the right to terminate or suspend access to the website or your ability to sign in at any time, without notice, for any reason.
+
+## 8. Changes to Terms
+
+These terms may be updated from time to time. Your continued use of the website after changes are posted constitutes your acceptance of the new terms.
+
+## 9. Contact
+
+If you have any questions about these Terms of Service, please contact me through the links provided on the homepage.
