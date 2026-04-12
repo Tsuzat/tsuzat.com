@@ -58,6 +58,8 @@ html {
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-text-size-adjust: 100%;
 	-ms-overflow-style: -ms-autohiding-scrollbar;
+
+	view-transition-name: none;
 }
 
 .dark {
