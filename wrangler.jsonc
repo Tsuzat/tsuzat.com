@@ -12,7 +12,7 @@
 	"preview_urls": true,
 	"d1_databases": [
 		{
-			"binding": "tsuzat",
+			"binding": "DB",
 			"database_name": "tsuzat",
 			"database_id": "cdf3208a-2cb1-4ff1-9669-722661f953e2",
 			"remote": true
