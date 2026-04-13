@@ -1,29 +1,31 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import IconCloud from '$lib/components/custom/IconCloud.svelte';
-	const slugs = [
-		'typescript',
-		'javascript',
-		'go',
-		'railway',
-		'betterauth',
-		'cloudflare',
-		'tailwindcss',
-		'svelte',
-		'html5',
-		'css3',
-		'nodedotjs',
-		'express',
-		'drizzle',
-		'railway',
-		'postgresql',
-		'firebase',
-		'vercel',
-		'docker',
-		'git',
-		'github',
-		'gitlab'
-	];
-	let images = $state(slugs.map((slug) => `https://cdn.simpleicons.org/${slug}/${slug}`));
+	import { mode } from 'mode-watcher';
+	const images = $derived([
+		'https://cdn.simpleicons.org/typescript/typescript',
+		'https://cdn.simpleicons.org/javascript/javascript',
+		'https://cdn.simpleicons.org/go/go',
+		'https://cdn.simpleicons.org/python',
+		'https://cdn.simpleicons.org/svelte',
+		`https://cdn.simpleicons.org/railway/${mode.current === 'dark' ? 'white' : 'black'}`,
+		'https://cdn.simpleicons.org/betterauth/betterauth',
+		'https://cdn.simpleicons.org/cloud/cloudflare/cloud',
+		'https://cdn.simpleicons.org/tailwindcss/tailwindcss',
+		'https://cdn.simpleicons.org/html5/html5',
+		'https://cdn.simpleicons.org/css/css',
+		'https://cdn.simpleicons.org/nodedotjs/nodedotjs',
+		`https://cdn.simpleicons.org/express/${mode.current === 'dark' ? 'white' : 'black'}`,
+		'https://cdn.simpleicons.org/drizzle/drizzle',
+		'https://cdn.simpleicons.org/hono',
+		`https://cdn.simpleicons.org/bun/${mode.current === 'dark' ? 'white' : 'black'}`,
+		'https://cdn.simpleicons.org/postgresql/postgresql',
+		'https://cdn.simpleicons.org/firebase/firebase',
+		`https://cdn.simpleicons.org/vercel/${mode.current === 'dark' ? 'white' : 'black'}`,
+		'https://cdn.simpleicons.org/docker/docker',
+		'https://cdn.simpleicons.org/git/git',
+		`https://cdn.simpleicons.org/github/${mode.current === 'dark' ? 'white' : 'black'}`
+	]);
 </script>
 
 <svelte:head>
@@ -75,5 +77,7 @@
 	<div class="relative flex size-full items-center justify-center overflow-hidden">
 		<IconCloud {images} />
 	</div>
-	<a href="/resume" class="dusration-500 my-8 transition-all hover:underline">Expore More...</a>
+	<a href={resolve('/resume')} class="dusration-500 my-8 transition-all hover:underline"
+		>Expore More...</a
+	>
 </div>

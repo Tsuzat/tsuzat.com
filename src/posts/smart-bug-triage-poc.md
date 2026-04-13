@@ -13,6 +13,24 @@ production: true
   import poster from '$lib/assets/posts/smart-bug-triage-poc/poster.png'
 </script>
 
+<details open>
+  <summary>Table of Content</summary>
+
+- [Smart Bug Triage: Building an AI-Powered Triage Assistant](#smart-bug-triage-building-an-ai-powered-triage-assistant)
+  - [The Problem with Traditional Bug Triage](#the-problem-with-traditional-bug-triage)
+  - [High-Level Idea](#high-level-idea)
+  - [Architecture Overview](#architecture-overview)
+  - [Step 1 — Building the Historical Knowledge Base](#step-1--building-the-historical-knowledge-base)
+  - [Step 2 — Smart Bug Analysis](#step-2--smart-bug-analysis)
+  - [AI Automation Workflow](#ai-automation-workflow)
+  - [Continuous Learning](#continuous-learning)
+  - [Why This Works](#why-this-works)
+  - [Impact](#impact)
+  - [Future Improvements](#future-improvements)
+  - [Final Thoughts](#final-thoughts)
+
+</details>
+
 # Smart Bug Triage: Building an AI-Powered Triage Assistant
 
 Modern engineering teams spend a surprising amount of time **triaging bugs** rather than fixing them.  

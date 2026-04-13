@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
+	import { resolve } from '$app/paths';
 
 	interface Props {
 		slug: string;
@@ -16,7 +17,7 @@
 </script>
 
 <Card.Root
-	onclick={() => goto(`/blogs/${slug}`)}
+	onclick={() => goto(resolve('/blogs/[name]', { name: slug }))}
 	class="bg-background hover:bg-muted dark:hover:bg-muted/50 scale-100 cursor-pointer  border-0 p-2! shadow-none transition-all duration-500 hover:scale-102"
 >
 	<Card.Content class="flex flex-col gap-2 p-0">
