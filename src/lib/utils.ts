@@ -5,6 +5,7 @@ import { twMerge } from 'tailwind-merge';
 import neosolarized from '$lib/assets/static/neosolazied.png';
 import edra from '$lib/assets/static/edra.png';
 import bugtriage from '$lib/assets/posts/smart-bug-triage-poc/poster.png';
+import micromanus from '$lib/assets/static/micromanus.png';
 
 export function cn(...inputs: ClassValue[]) {
 	return twMerge(clsx(inputs));
@@ -44,7 +45,8 @@ export const projects: Project[] = [
 		href: 'https://edra.tsuzat.com/',
 		img: edra,
 		title: 'Edra',
-		description: 'Best Rich Text Editor, made for Svelte Developers with Tiptap',
+		description:
+			'An open-source, extensible rich text editor framework for Svelte, built on TipTap with a modern plugin architecture.',
 		github: {
 			username: 'Tsuzat',
 			repo: 'edra'
@@ -55,10 +57,21 @@ export const projects: Project[] = [
 		img: 'https://www.nota.ink/previews/dark.webp',
 		title: 'Nota',
 		description:
-			'A Fast, Modern, Feature Rich and Lightweight Note taking desktop application made with native AI integration',
+			'A local-first, cross-platform note-taking application built with SvelteKit, Go, and Tauri, featuring AI assistance and seamless cloud sync.',
 		github: {
 			username: 'Tsuzat',
 			repo: 'nota'
+		}
+	},
+	{
+		href: 'https://micromanus.tsuzat.com/',
+		img: micromanus,
+		title: 'MicroManus',
+		description:
+			'A production-ready AI chat platform supporting multiple LLM providers, streaming responses, authentication, usage analytics, and subscriptions.',
+		github: {
+			username: 'Tsuzat',
+			repo: 'micromanus'
 		}
 	},
 	{
@@ -66,14 +79,15 @@ export const projects: Project[] = [
 		img: bugtriage,
 		title: 'Smart Bug Triage (AI PoC)',
 		description:
-			'AI-powered bug triage system using embeddings, vector search, and LLM reasoning to analyze issues and suggest fixes automatically.',
+			'An enterprise AI proof of concept using embeddings, vector search, RAG, and LLMs to automate bug analysis and accelerate developer workflows.',
 		github: undefined
 	},
 	{
 		href: 'https://github.com/Tsuzat/NeoSolarized.nvim',
 		img: neosolarized,
 		title: 'NeoSolarized.nvim',
-		description: 'NeoSolarized colorscheme for NeoVim with full transparency',
+		description:
+			'A modern NeoVim colorscheme inspired by Solarized, featuring full transparency and extensive plugin support.',
 		github: {
 			username: 'Tsuzat',
 			repo: 'NeoSolarized.nvim'
