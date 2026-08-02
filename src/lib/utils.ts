@@ -5,7 +5,6 @@ import { twMerge } from 'tailwind-merge';
 import neosolarized from '$lib/assets/static/neosolazied.png';
 import edra from '$lib/assets/static/edra.png';
 import bugtriage from '$lib/assets/posts/smart-bug-triage-poc/poster.png';
-import micromanus from '$lib/assets/static/micromanus.png';
 
 export function cn(...inputs: ClassValue[]) {
 	return twMerge(clsx(inputs));
@@ -61,17 +60,6 @@ export const projects: Project[] = [
 		github: {
 			username: 'Tsuzat',
 			repo: 'nota'
-		}
-	},
-	{
-		href: 'https://micromanus.tsuzat.com/',
-		img: micromanus,
-		title: 'MicroManus',
-		description:
-			'A production-ready AI chat platform supporting multiple LLM providers, streaming responses, authentication, usage analytics, and subscriptions.',
-		github: {
-			username: 'Tsuzat',
-			repo: 'micromanus'
 		}
 	},
 	{
