@@ -54,7 +54,7 @@ export const projects: Project[] = [
 	},
 	{
 		href: 'https://www.nota.ink/',
-		img: 'https://www.nota.ink/previews/dark.webp',
+		img: 'https://www.nota.ink/preview/dark.png',
 		title: 'Nota',
 		description:
 			'A local-first, cross-platform note-taking application built with SvelteKit, Go, and Tauri, featuring AI assistance and seamless cloud sync.',
